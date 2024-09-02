@@ -27,38 +27,21 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/newbutton.css">
+	<link rel="icon" type="image" href="assets/img/img.jpeg.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<style>
+		
+	</style>
   </head>
   <body>
 	
-  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<img style="width: 100px; height: 100px; position: relative; left: 0px;" src="images/img.jpeg.png" alt="">
-	    <div class="container">
-	      
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-				<!--html here (index.html)-->
-	          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-	          <!--<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>-->
-			  <!--html here-->
-	          <li class="nav-item"><a href="service" class="nav-link">Services</a></li>
-			  <!--
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-			  -->
-			  <!--html here-->
-	          <li style="font-family: Georgia, 'Times New Roman', Times, serif;" class="nav-item"><a href="about" class="nav-link">About</a></li>
-			  
-			<!--html here-->
-	          <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-			  <!--
-	          <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
-			  -->
-	        </ul>
-	      </div>
-		  </div>
-	  </nav>
+  @if(Auth::check() && Auth::user()->isAdmin())
+        @include('layouts.adminheader')
+    @else
+        @include('layouts.userheader')
+    @endif
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
@@ -72,7 +55,7 @@
               <h1 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Transforming Your Outdoor Spaces</h1>
               <p class="mb-4 mb-md-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">Expert Landscaping and Hardscaping Solutions
 			</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Let's Begin</a></p>
+              <p><a href="#1" class="custom-btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px;">Let's Begin</a></p>
             </div>
 
           </div>
@@ -88,7 +71,7 @@
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Amazing Designs &amp; Beautiful Places</h1>
               <p class="mb-4 mb-md-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">EXPERT LANDSCAPING AND HARDSCAPING SOLUTIONS</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Let's Begin</a> </p>
+              <p><a href="#1" class="custom-btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px;">Let's Begin</a> </p>
             </div>
 
           </div>
@@ -105,7 +88,7 @@
               <h1 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Transforming Your Outdoor Spaces</h1>
               <p class="mb-4 mb-md-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">EXPERT LANDSCAPING AND HARDSCAPING SOLUTIONS
 			</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Let's Begin</a> </p>
+              <p><a href="#1" class="custom-btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px;">Let's Begin</a> </p>
             </div>
 
           </div>
@@ -121,7 +104,7 @@
 	    				<div class="col-md-4 d-flex ftco-animate" style="color: black;">
 	    					<div class="icon"><span class="icon-phone"></span></div>
 	    					<div class="text">
-	    						<h3 style="color: black;">000 (123) 456 7890</h3>
+	    						<h3 style="color: black;">	+91 940 001 1292</h3>
 	    						<p style="font-family: Georgia, 'Times New Roman', Times, serif;">A small river named Duden flows by their place and supplies.</p>
 	    					</div>
 	    				</div>
@@ -146,18 +129,19 @@
     	</div>
     </section>
 
-    <section class="ftco-about d-md-flex">
-    	<div class="one-half img" style="background-image: url(images/img-exp-7.png);"></div>
+    <section class="ftco-about d-md-flex" id="1">
+	
+    	<div class="one-half img" style="background-image: url({{ asset('storage/' . $about->image) }}); box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; position: relative; top: 15px;"></div>
     	<div class="one-half ftco-animate">
-    		<div class="overlap">
+    		<div class="overlap" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;">
 	        <div class="heading-section ftco-animate ">
 	        	<span class="subheading">@if($about->discover)
         {{ $about->discover }}
     @endif</span>
-	          <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $about->title }}</h2>
+	          <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #fff;">{{ $about->title }}</h2>
 	        </div>
 	        <div>
-	  				<p style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">{{ $about->description }}
+	  				<p style="font-family: Georgia, 'Times New Roman', Times, serif; color: #fff;">{{ $about->description }}
 					</p>
 	  			</div>
   			</div>
@@ -165,59 +149,100 @@
     </section>
 
     <section class="ftco-section ftco-services">
-    	<div class="container">
-    		<div class="row">
-          <div class="col-md-4 ftco-animate">
-            <div class="media d-block text-center block-6 services">
-              <div class="icon d-flex justify-content-center align-items-center mb-5">
-              	<!--<span class="flaticon-choices"></span>-->
-				  <img style="width: 95px;" src="https://www.southernliving.com/thmb/7r2syY01IwYy239KpsPun1RNF5c=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/1072701_coled170-173_0-51494988d09c405cbc52a511037e317c.jpg" alt="A picture">
-
-              </div>
-              <div class="media-body">
-                <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Landscaping</h3>
-                <p style="font-family: Georgia, 'Times New Roman', Times, serif;">We offer comprehensive landscaping services to create stunning outdoor environments.
-					 Our team ensures that every detail is meticulously planned and executed.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="media d-block text-center block-6 services">
-              <div class="icon d-flex justify-content-center align-items-center mb-5">
-				<!--
-              	<span class="flaticon-delivery-truck"></span>
-			  -->
-			  <img style="width: 95px;" src="https://www.southernliving.com/thmb/riqyDTLrFz_WvTa9FwiCzhO5u44=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2108601_puopo0143_0-391a4f5c46754298b48304424b9ff99e.jpg" alt="">
-              </div>
-              <div class="media-body">
-                <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Hardscaping</h3>
-                <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Our hardscaping solutions include patios, walkways, retaining walls, and more. We use
-					 high-quality materials to ensure durability and aesthetic appeal.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="media d-block text-center block-6 services">
-              <div class="icon d-flex justify-content-center align-items-center mb-5">
-				<!--
-              	<span class="flaticon-coffee-bean"></span>-->
-
-				  <img style="width: 95px;" src="https://www.southernliving.com/thmb/5aKuI1Unv4ZuMjIOARXLuDSqJac=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2756302_CurbAppeal_31w-52eabad4148f49a2927bc75af272cd49.jpg" alt="">
-			</div>
-              <div class="media-body">
-                <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Outdoor Lighting</h3>
-                <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Enhance your landscape with our outdoor lighting services. We design and install lighting
-					 solutions that highlight the beauty of your outdoor spaces.
-
-				</p>
-              </div>
-            </div>    
-          </div>
+    <div class="container">
+        <div id="servicesCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4 ftco-animate">
+                            <div class="media d-block text-center block-6 services" style="border-radius: 8px;">
+                                <div class="icon d-flex justify-content-center align-items-center mb-5">
+                                    <img style="width: 183%; border-radius: 8px; position: relative; top: 10px;  border-radius: 8px; position: relative; top: 10px; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://www.southernliving.com/thmb/7r2syY01IwYy239KpsPun1RNF5c=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/1072701_coled170-173_0-51494988d09c405cbc52a511037e317c.jpg" alt="A picture">
+                                </div>
+                                <div class="media-body" style="padding: 8px; position: relative; top: 30px;">
+                                    <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; ">Landscaping</h3>
+                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px;">We offer comprehensive landscaping services to create stunning outdoor environments. Our team ensures that every detail is meticulously planned and executed.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ftco-animate">
+                            <div class="media d-block text-center block-6 services" style=" border-radius: 8px;">
+                                <div class="icon d-flex justify-content-center align-items-center mb-5">
+                                    <img style="width: 183%; border-radius: 8px; position: relative; top: 10px; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://www.southernliving.com/thmb/riqyDTLrFz_WvTa9FwiCzhO5u44=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2108601_puopo0143_0-391a4f5c46754298b48304424b9ff99e.jpg" alt="">
+                                </div>
+                                <div class="media-body" style="padding: 25px;">
+                                    <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Hardscaping</h3>
+                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Our hardscaping solutions include patios, walkways, retaining walls, and more. We use high-quality materials to ensure durability and aesthetic appeal.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ftco-animate">
+                            <div class="media d-block text-center block-6 services" style="border-radius: 8px;">
+                                <div class="icon d-flex justify-content-center align-items-center mb-5">
+                                    <img style="width: 183%; border-radius: 8px; position: relative; top: 10px; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://www.southernliving.com/thmb/5aKuI1Unv4ZuMjIOARXLuDSqJac=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2756302_CurbAppeal_31w-52eabad4148f49a2927bc75af272cd49.jpg" alt="">
+                                </div>
+                                <div class="media-body" style="padding: 8px; position: relative; top: 30px;">
+                                    <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Outdoor Lighting</h3>
+                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Enhance your landscape with our outdoor lighting services. We design and install lighting solutions that highlight the beauty of your outdoor spaces.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <!-- Repeat the same content for the second slide -->
+                        <div class="col-md-4 ftco-animate">
+							<div class="media d-block text-center block-6 services" style="border-radius: 8px;">
+								<div class="icon d-flex justify-content-center align-items-center mb-5">
+                                    <img style="width: 183%; border-radius: 8px; position: relative; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://images.landscapingnetwork.com/pictures/images/401x227Exact/backyard-landscaping_1/wheelchair-accessible-backyard-the-cornerstone-landscape-group_543.jpg" alt="A picture">
+                                </div>
+                                <div class="media-body" style="padding: 8px; position: relative; top: 30px;">
+                                    <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Exterior Designing</h3>
+                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">We offer great and beautiful looking exterior services like no other to create stunning environments. Our team of professionals ensures that every detail is meticulously planned and executed so that there is a beautiful smile on your face.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ftco-animate">
+							<div class="media d-block text-center block-6 services" style="border-radius: 8px;">
+                                
+                                    <img style="width: 53%; border-radius: 8px; position: relative; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://wirtzanddaughters.com/wp-content/uploads/2023/02/EP-firepit2-1-e1675877945185-1024x827.jpg" alt="">
+                               
+                                <div class="media-body" style="padding: 15px;">
+                                    <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Garden Installations and Maintanance</h3>
+                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Our handpicked team of specilized worked will make your garden look more fresh and beatuiful to see, We use high-quality materials to ensure durability and elagont looks. Our garden management team will look after your garden and maintain it for you.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ftco-animate">
+							<div class="media d-block text-center block-6 services" style="border-radius: 8px;">
+                                <div class="icon d-flex justify-content-center align-items-center mb-5">
+                                    <img style="width: 195%; border-radius: 8px; position: relative; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://sparkle.lighting/cdn/shop/collections/outdoor-lights-897811.jpg?v=1705333647" alt="">
+                                </div>
+                                <div class="media-body" style="padding: 25px;">
+                                    <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Seasonal Cleanup Services</h3>
+                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Tired of clean up after a bad season, well then here is your solution for you!!!, We are here to take care of your problems for you. Out team of experts will take care of your work's of cleaning up after the end of each seasons.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <a class="carousel-control-prev" href="#servicesCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#servicesCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-    	</div>
-    </section>
+    </div>
+</section>
 
-    <section class="ftco-section">
+
+    <section class="ftco-section" style="padding: 1px;">
     	<div class="container">
     		<div class="row align-items-center">
     			<div class="col-md-6 pr-md-5">
@@ -226,29 +251,29 @@
 	            <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">Our Services</h2>
 	            <p class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">{{ $discoverService->description }}
 					</p>
-	            <p><a href="service" class="btn btn-primary btn-outline-primary px-4 py-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">View More </a></p>
+	            <p><a href="service" class="btn btn-primary btn-outline-primary px-4 py-3" style="font-family: Georgia, 'Times New Roman', Times, serif; box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;">View More </a></p>
 	          </div>
     			</div>
     			<div class="col-md-6">
     				<div class="row">
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url(images/img-ext-1.png);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/img-ext-1.png); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry mt-lg-4">
-		    					<a href="#" class="img" style="background-image: url(images/img-ext-2.png);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/img-ext-2.png); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url(images/img-exp-4.png);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/img-exp-4.png); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry mt-lg-4">
-		    					<a href="#" class="img" style="background-image: url(images/img-exp-5.png);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/img-exp-5.png); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;"></a>
 		    				</div>
     					</div>
     				</div>
@@ -266,7 +291,7 @@
 		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18 text-center">
 		              <div class="text">
-		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              	<div class="icon"><i class="fa-sharp fa-solid fa-building" style="padding: 10px; font-size:300%; color: #fff;"></i></div>
 		              	<strong class="number" data-number="100">0</strong>
 		              	<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Our Branches</span>
 		              </div>
@@ -275,7 +300,7 @@
 		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18 text-center">
 		              <div class="text">
-		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              	<div class="icon"><i class="fa-solid fa-person-circle-check" style="padding: 10px; font-size:300%; color: #fff;"></i></div>
 		              	<strong class="number" data-number="10567">0</strong>
 		              	<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Number of Project We Did</span>
 		              </div>
@@ -284,7 +309,7 @@
 		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18 text-center">
 		              <div class="text">
-		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              	<div class="icon"><i class="fa-solid fa-person" style="padding: 10px; font-size:300%; color: #fff;"></i></div>
 		              	<strong class="number" data-number="10567">0</strong>
 		              	<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Happy Customer</span>
 		              </div>
@@ -293,7 +318,7 @@
 		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18 text-center">
 		              <div class="text">
-		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              	<div class="icon" style="color: #fff;"><i class="fa-solid fa-person-digging" style="padding: 10px; font-size:300%; color: #fff;"></i></div>
 		              	<strong class="number" data-number="900">0</strong>
 		              	<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Staff</span>
 		              </div>
@@ -305,6 +330,7 @@
       </div>
     </section>
 
+	<!--
     <section class="ftco-section">
     	<div class="container">
     		<div class="row justify-content-center mb-5 pb-3">
@@ -371,469 +397,216 @@
         </div>
     	</div>
     </section>
-
-    <section class="ftco-gallery">
-    	<div class="container-wrap">
-    		<div class="row no-gutters">
-					<div class="col-md-3 ftco-animate">
-						<!--html-->
-						<a href="images/img-exp-9.png" class="gallery img d-flex align-items-center" style="background-image: url(images/img-exp-9.png);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="gimages/gallery-2.jpg" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-2.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="images/img-exp-10.png" class="gallery img d-flex align-items-center" style="background-image: url(images/img-exp-10.png);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="images/gallery-4.jpg" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-        </div>
-    	</div>
-    </section>
-<!--
-		<section class="ftco-menu">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Discover</span>
-            <h2 class="mb-4">Our Products</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-    		<div class="row d-md-flex">
-	    		<div class="col-lg-12 ftco-animate p-md-5">
-		    		<div class="row">
-		          <div class="col-md-12 nav-link-wrap mb-5">
-		            <div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-		              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Main Dish</a>
-
-		              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Drinks</a>
-
-		              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Desserts</a>
-		            </div>
-		          </div>
-		          <div class="col-md-12 d-flex align-items-center">
-		            
-		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
-
-		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-		              	<div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Grilled Beef</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Grilled Beef</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Grilled Beef</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
-		                <div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Lemonade Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Pineapple Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Soda Drinks</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
-		                <div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Hot Cake Honey</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Hot Cake Honey</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Hot Cake Honey</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-    	</div>
-    </section>
-	-->
-
-    <section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/img-exp-8.png);"  data-stellar-background-ratio="0.5">
-    	<div class="overlay"></div>
-	    <div class="container">
-	      <div class="row justify-content-center mb-5">
-	        <div class="col-md-7 heading-section text-center ftco-animate">
-	        	<span class="subheading">Testimony</span>
-	          <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Customers Says</h2>
-	          <p style="font-family: Georgia, 'Times New Roman', Times, serif; color: white;">Hear from our satisfied customers about their experiences with our exceptional landscaping services. Their words reflect our commitment to quality and customer satisfaction.</p>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="container-wrap">
-	      <div class="row d-flex no-gutters">
-	        <div class="col-lg align-self-sm-end ftco-animate">
-	          <div class="testimony" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-	             <blockquote>
-	                <p>&ldquo;My garden has never looked better! The team was professional, punctual, and transformed my outdoor space into a beautiful oasis&rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="images\person_4.jpg" alt="">
-	                </div>
-	                <div class="name align-self-center" style="font-family: Georgia, 'Times New Roman', Times, serif;">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end">
-	          <div class="testimony overlay" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-	             <blockquote>
-	                <p>&ldquo;Excellent service from start to finish. The lawn maintenance and garden design exceeded my expectations. Highly recommend!&rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="images/person_2.jpg" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end ftco-animate">
-	          <div class="testimony" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-	             <blockquote>
-	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="images/person_3.jpg" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end">
-	          <div class="testimony overlay" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-	             <blockquote>
-	                <p>&ldquo;The new irrigation system is fantastic. Efficient, effective, and installed with minimal disruption. Great job!&rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="images/person_2.jpg" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end ftco-animate">
-	          <div class="testimony" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-	            <blockquote>
-	              <p>&ldquo;I am thrilled with the seasonal cleanup services. My yard is always ready for each season, thanks to their meticulous work &rdquo;</p>
-	            </blockquote>
-	            <div class="author d-flex mt-4">
-	              <div class="image mr-3 align-self-center">
-	                <img src="images/person_3.jpg" alt="">
-	              </div>
-	              <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </section>
-<!--
-    <section class="ftco-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Recent from blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 -->
+
+	<section class="ftco-gallery">
+		<div class="container-wrap">
+			<div class="row no-gutters">
+				<div class="col-6 col-lg align-self-sm-end ftco-animate">
+					<div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="images/img-exp-9.png" style="height: 250px;" class="d-block w-100" alt="Image 1">
+							</div>
+							<div class="carousel-item">
+								<img src="images/gallery-2.jpg" style="height: 250px;" class="d-block w-100" alt="Image 2">
+							</div>
+							<div class="carousel-item">
+								<img src="images/gallery-4.jpg" style="height: 250px;" class="d-block w-100" alt="Image 3">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+				<div class="col-6 col-lg align-self-sm-end ftco-animate">
+					<div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="images/gallery-2.jpg" style="height: 250px;" class="d-block w-100" alt="Image 4">
+							</div>
+							<div class="carousel-item">
+								<img src="images/img-exp-9.png" style="height: 250px;" class="d-block w-100" alt="Image 5">
+							</div>
+							<div class="carousel-item">
+								<img src="images/img-exp-10.png" style="height: 250px;" class="d-block w-100" alt="Image 6">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+				<div class="col-6 col-lg align-self-sm-end ftco-animate">
+					<div id="carouselExampleControls3" style="height: 250px;" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="images/img-exp-10.png" style="height: 250px;" class="d-block w-100" alt="Image 7">
+							</div>
+							<div class="carousel-item">
+								<img src="images/gallery-2.jpg" style="height: 250px;" class="d-block w-100" alt="Image 8">
+							</div>
+							<div class="carousel-item">
+								<img src="images/gallery-4.jpg" style="height: 250px;" class="d-block w-100" alt="Image 9">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+				<div class="col-6 col-lg align-self-sm-end ftco-animate">
+					<div id="carouselExampleControls4" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="images/gallery-4.jpg" style="height: 250px;" class="d-block w-100" alt="Image 10">
+							</div>
+							<div class="carousel-item">
+								<img src="images/img-exp-10.png" style="height: 250px;" class="d-block w-100" alt="Image 11">
+							</div>
+							<div class="carousel-item">
+								<img src="images/img-exp-9.png" style="height: 250px;" class="d-block w-100" alt="Image 12">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleControls4" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleControls4" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	
+
+
+	<section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/img-exp-8.png);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">Testimony</span>
+                <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Customers Say</h2>
+                <p style="font-family: Georgia, 'Times New Roman', Times, serif; color: white;">
+                    Hear from our satisfied customers about their experiences with our exceptional landscaping services. 
+                    Their words reflect our commitment to quality and customer satisfaction.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-wrap">
+        <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                @foreach($testimonials->chunk(5) as $key => $testimonyChunk)
+                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                    <div class="row d-flex no-gutters">
+                        @foreach($testimonyChunk as $testimony)
+                        <div class="col-lg align-self-sm-end ftco-animate">
+                            <div class="testimony {{ $loop->iteration % 2 == 0 ? 'overlay' : '' }}" style="font-family: Georgia, 'Times New Roman', Times, serif;  height: 300px;">
+                                <blockquote>
+                                    <p>&ldquo;{{ $testimony->testimonial }}&rdquo;</p>
+                                </blockquote>
+                                <div class="author d-flex mt-4">
+                                    <div class="image mr-3 align-self-center">
+                                        <img style="border-radius: 20px;" src="{{ asset('storage/' . $testimony->image) }}" alt="">
+                                    </div>
+                                    <div class="name align-self-center" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                                        {{ $testimony->name }} <span class="position">{{ $testimony->job }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
 		
-		<section class="ftco-appointment">
-			<div class="overlay"></div>
-    	<div class="container-wrap">
-    		<div class="row no-gutters d-md-flex align-items-center">
-    			<div class="col-md-6 d-flex align-self-stretch">
-    				<div><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d355688.94458197936!2d76.52036054809118!3d9.94687135613845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1722513010961!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    			</div>
-	    		<div class="col-md-6 appointment ftco-animate">
-	    			<h3 class="mb-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Contact Us</h3>
-	    			<form action="{{route('contact.store')}}" method="POST" class="appointment-form">
+<section class="ftco-appointment">
+	<div class="overlay"></div>
+	<div class="container-wrap">
+		<div class="row no-gutters d-flex align-items-center">
+			<div class="col-12 col-md-6 d-flex align-self-stretch">
+				<div style="width: 100%;">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d355688.94458197936!2d76.52036054809118!3d9.94687135613845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1722513010961!5m2!1sen!2sin" width="100%" height="100%" style="border:0; min-height: 450px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 appointment ftco-animate">
+				<h3 class="mb-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Contact Us</h3>
+				<form action="{{ route('contact.store') }}" method="POST" class="appointment-form">
 					@csrf
-	    				<div class="d-md-flex">
-		    				<div class="form-group">
-		    					<input type="text" name="name" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" placeholder="Full Name">
-		    				</div>
-		    				<div class="form-group ml-md-4">
-		    					<input name="mobile" type="text" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" placeholder="Phone">
-		    				</div>
-	    				</div>
-	    				<div class="d-md-flex">
-		    				<!--<div class="form-group">
-		    					<div class="input-wrap">
-		            		<div class="icon"><span class="ion-md-calendar"></span></div>
-							
-		            		<input type="text" class="form-control appointment_date" style="font-family: Georgia, 'Times New Roman', Times, serif;" placeholder="Date">
-	            		</div>
-		    				</div>-->
-							<!--
-		    				<div class="form-group ml-md-4">
-		    					<div class="input-wrap">
-		            		<div class="icon"><span class="ion-ios-clock"></span></div>
-		            		<input type="text" class="form-control appointment_time" style="font-family: Georgia, 'Times New Roman', Times, serif;" placeholder="Time">
-	            		</div>
-		    				</div>-->
-		    				<div class="form-group">
-		    					<input type="text" name="email" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" placeholder="Email">
-		    				</div>
-	    				</div>
-	    				<div class="d-md-flex">
-	    					<div class="form-group">
-		              <textarea name="message" id="" cols="30" rows="2" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" placeholder="Message"></textarea>
-		            </div>
-					<button type="submit" style="padding:20px; width:35%; font-family: Georgia, 'Times New Roman', Times, serif; " class="btn btn-primary">Send Message</button>
-					<!--
-		            <div class="form-group ml-md-4">
-						
-		              <input type="submit" value="Book a Call Back" style="font-family: Georgia, 'Times New Roman', Times, serif;" class="btn btn-primary py-3 px-4">
-		            </div>-->
-	    				</div>
-	    			</form>
-	    		</div>
-    		</div>
-    	</div>
-    </section>
+					<div class="d-md-flex">
+						<div class="form-group">
+							<input type="text" name="name" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" placeholder="Full Name">
+						</div>
+						<div class="form-group ml-md-4">
+							<input name="mobile" type="text" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" placeholder="Phone">
+						</div>
+					</div>
+					<div class="d-md-flex">
+						<div class="form-group">
+							<input type="text" name="email" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" placeholder="Email">
+						</div>
+					</div>
+					<div class="d-md-flex">
+						<div class="form-group">
+							<textarea name="message" id="" cols="30" rows="2" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" placeholder="Message"></textarea>
+						</div>
+					</div>
+					<button type="submit" style="padding:20px; width:100%; font-family: Georgia, 'Times New Roman', Times, serif;" class="btn btn-primary">Send Message</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
 
-    <footer class="ftco-footer ftco-section img">
-    	<div class="overlay"></div>
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-              <h2 class="ftco-heading-2" style="font-family: Georgia, 'Times New Roman', Times, serif;">About Us</h2>
-              <p>Transform your outdoor space with our expert landscaping solutions. At Benglavil, we offer a 
-				wide range of services to enhance the beauty and functionality of your property. From custom 
-				landscape design and garden maintenance to hardscaping and irrigation systems, our skilled 
-				team ensures exceptional results tailored to your needs.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
 
-		  <!--
-          <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Recent Blog</h2>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-		-->
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-             <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2" style="font-family: Georgia, 'Times New Roman', Times, serif;">Services</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Landscape Design Consultation</a></li>
-                <li><a href="#" class="py-2 d-block">Weekly Lawn Care</a></li>
-                <li><a href="#" class="py-2 d-block">Garden Bed Maintenance</a></li>
-                <li><a href="#" class="py-2 d-block">Pest and Weed Control</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2" style="font-family: Georgia, 'Times New Roman', Times, serif;">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+919400011292</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@benglavil.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with by <a href="https://colorlib.com" target="_blank">Benglavil</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
+	@if(Auth::check() && Auth::user()->isAdmin())
+        @include('layouts.adminfooter')
+    @else
+        @include('layouts.userfooter')
+    @endif
     
   
 
@@ -863,7 +636,3 @@
 </html>
 
 
-<!--
-color:#05ef1a
-black background pic : images/bg_4.jpg
--->

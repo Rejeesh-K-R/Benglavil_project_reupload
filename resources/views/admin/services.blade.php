@@ -9,6 +9,11 @@
 	<link rel="stylesheet" href="{{asset('assets/css/ready.css') }}">
 	<link rel="stylesheet" href="{{asset('assets/css/demo.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+	<link rel="icon" type="image" href="{{asset('assets/img/img.jpeg.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 	<style>
         .row {
@@ -94,295 +99,24 @@
 
 </head>
 <body style="font-family: Georgia, 'Times New Roman', Times, serif;">
-	<div class="wrapper">
-		<div class="main-header">
-			<div class="logo-header">
-				<!--html here-->
-				<a href="admin" class="logo">
-					<img style="width: 70px;" src="{{asset('assets\img\img.jpeg.png') }}" alt="">
-				</a>
-				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
-			</div>
-			<nav class="navbar navbar-header navbar-expand-lg">
-				<div class="container-fluid">
-					
-					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
-						<div class="input-group">
-							<input type="text" placeholder="Search ..." class="form-control">
-							<div class="input-group-append">
-								<span class="input-group-text">
-									<i class="la la-search search-icon"></i>
-								</span>
-							</div>
-						</div>
-					</form>
-					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<li class="nav-item dropdown hidden-caret">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="la la-envelope"></i>
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Action</a>
-								<a class="dropdown-item" href="#">Another action</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Something else here</a>
-							</div>
-						</li>
-						<li class="nav-item dropdown hidden-caret">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="la la-bell"></i>
-								<span class="notification">3</span>
-							</a>
-							<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
-								<li>
-									<div class="dropdown-title">You have 4 new notification</div>
-								</li>
-								<li>
-									<div class="notif-center">
-										<a href="#">
-											<div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
-											<div class="notif-content">
-												<span class="block">
-													New user registered
-												</span>
-												<span class="time">5 minutes ago</span> 
-											</div>
-										</a>
-										<a href="#">
-											<div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
-											<div class="notif-content">
-												<span class="block">
-													Rahmad commented on Admin
-												</span>
-												<span class="time">12 minutes ago</span> 
-											</div>
-										</a>
-										<a href="#">
-											<div class="notif-img"> 
-												<img src="{{asset('assets/img/profile2.jpg') }}" alt="Img Profile">
-											</div>
-											<div class="notif-content">
-												<span class="block">
-													Reza send messages to you
-												</span>
-												<span class="time">12 minutes ago</span> 
-											</div>
-										</a>
-										<a href="#">
-											<div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
-											<div class="notif-content">
-												<span class="block">
-													Farrah liked Admin
-												</span>
-												<span class="time">17 minutes ago</span> 
-											</div>
-										</a>
-									</div>
-								</li>
-								<li>
-									<a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
-								</li>
-							</ul>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="{{asset('assets/img/profile.jpg') }}" alt="user-img" width="36" class="img-circle"><span >Hizrian</span></span> </a>
-							<ul class="dropdown-menu dropdown-user">
-								<li>
-									<div class="user-box">
-										<div class="u-img"><img src="{{asset('assets/img/profile.jpg') }}" alt="user"></div>
-										<div class="u-text">
-											<h4>Hizrian</h4>
-											<!--html here-->
-											<!--<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>-->
-											<p class="text-muted">hello@themekita.com</p><a href="#" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
-										</div>
-									</li>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
-									<a class="dropdown-item" href="#"></i> My Balance</a>
-									<a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
-								</ul>
-								<!-- /.dropdown-user -->
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-			<div class="sidebar">
-				<div class="scrollbar-inner sidebar-wrapper">
-					<div class="user">
-						<div class="photo">
-							<img src="{{asset('assets/img/profile.jpg') }}">
-						</div>
-						<div class="info">
-							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
-									<span class="caret"></span>
-								</span>
-							</a>
-							<div class="clearfix"></div>
-
-							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
-								<ul class="nav">
-									<li>
-										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#edit">
-											<span class="link-collapse">Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse">Settings</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<ul class="nav">
-						<li class="nav-item">
-							<!--html here-->
-							<a href="/admin">
-								<i class="la la-dashboard"></i>
-								<p>Dashboard</p>
-								<span class="badge badge-count">5</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<!--html here-->
-							<a href="about">
-								<i class="la la-keyboard-o"></i>
-								<p>about</p>
-								<span class="badge badge-count">50</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<!--html here-->
-							<a href="services">
-								<i class="la la-keyboard-o"></i>
-								<p>Services</p>
-								<span class="badge badge-count">50</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<!--html here-->
-							<a href="contact">
-								<i class="la la-keyboard-o"></i>
-								<p>Contact</p>
-								<span class="badge badge-count">50</span>
-							</a>
-						</li>
-
-						
-					</ul>
-				</div>
-			</div>
+@extends('layouts.app')
+@section('content')
+			
 			<div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
-						<div class="row">
-
-                            <div class="col-md-3">
-								<div class="card card-stats card-warning">
-									<div class="card-body ">
-										<div class="row">
-											<div class="col-5">
-												<div class="icon-big text-center">
-													<i class="la la-users"></i>
-												</div>
-											</div>
-											<div class="col-7 d-flex align-items-center">
-												<div class="numbers">
-													<p class="card-category">Page Views</p>
-													<h4 class="card-title">1,294</h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="card card-stats card-success">
-									<div class="card-body ">
-										<div class="row">
-											<div class="col-5">
-												<div class="icon-big text-center">
-													<i class="la la-bar-chart"></i>
-												</div>
-											</div>
-											<div class="col-7 d-flex align-items-center">
-												<div class="numbers">
-													<p class="card-category">Requests</p>
-													<h4 class="card-title">$ 1,345</h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="card card-stats card-danger">
-									<div class="card-body">
-										<div class="row">
-											<div class="col-5">
-												<div class="icon-big text-center">
-													<i class="la la-newspaper-o"></i>
-												</div>
-											</div>
-											<div class="col-7 d-flex align-items-center">
-												<div class="numbers">
-													<p class="card-category">Contacted</p>
-													<h4 class="card-title">1303</h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="card card-stats card-primary">
-									<div class="card-body ">
-										<div class="row">
-											<div class="col-5">
-												<div class="icon-big text-center">
-													<i class="la la-check-circle"></i>
-												</div>
-											</div>
-											<div class="col-7 d-flex align-items-center">
-												<div class="numbers">
-													<p class="card-category">Projects</p>
-													<h4 class="card-title">576</h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-                        </div>
+						
 						<div class="row">
 							
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-header">
 										<div class="row">
-                                            <div class="card-title">{{ $discoverService->title ?? 'Discover Our Services' }}</div>
-                                            <span class="button" style="position: relative; left: 725px;;">
+                                            <div class="card-title" style="padding:30px;">{{ $discoverService->title ?? 'Discover Our Services' }}</div>
+                                            <span class="button" style="position: relative; left: 655px;;">
                                                 <div class="media-body" style="font-family: Georgia, 'Times New Roman', Times, serif; height: 10px;">
                                                     
-												<a href="#" class="btn-green" style="font-family: Georgia, 'Times New Roman', Times, serif;" onclick="showEditDiscoverPopup()">Edit</a>
+												<a href="#" class="btn-green" style="font-family: Georgia, 'Times New Roman', Times, serif;" onclick="showEditDiscoverPopup()"><i class="fa-solid fa-pen"></i>Edit</a>
 
                                                 </div>
                                                 
@@ -401,8 +135,8 @@
             <textarea id="discover_description" name="description" class="form-control" required></textarea>
         </div>
         <div class="form-group">
-            <button type="button" class="btn btn-secondary" onclick="closeEditDiscoverPopup()">Cancel</button>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-danger" onclick="closeEditDiscoverPopup()">Cancel</button>
+            <button type="submit" class="btn btn-success">Save</button>
         </div>
     </form>
 </div>
@@ -415,6 +149,7 @@
 											<thead style="font-family: Georgia, 'Times New Roman', Times, serif;">
 												<tr>
 													<th scope="col"><h1 style="font-family: Georgia, 'Times New Roman', Times, serif;"><small>{{ $discoverService ? $discoverService->title : 'Default Title Here' }}
+														
                                                         </small></h1></th>
 												</tr>
 											</thead>
@@ -430,11 +165,11 @@
                                         <div class="card">
                                             <div class="card-header">
 											<div class="row">
-        <div class="card-title">Discover Our Services</div>
-        <span class="button" style="position: relative; left: 725px;">
-            <div class="media-body" style="height: 10px;">
+        <div class="card-title" style="padding:30px;">Discover Our Services</div>
+        <span class="button" style="position: relative; left: 625px;">
+            <div class="media-body" style="height: 5px; top:250px;">
 				<!--html here-->
-                <a href="/admin/serviceform" class="btn-green" id="addServiceBtn">Add</a>
+                <a href="/admin/serviceform" class="btn-green" id="addServiceBtn" style="font-family: Georgia, 'Times New Roman', Times, serif;"><i class="fa-solid fa-plus"></i></a>
             </div>
         </span>
     </div>
@@ -489,11 +224,11 @@
 																<!--<td><img style="width: 100px;" src="{{asset('assets\img\img-exp-8.png') }}" alt=""></td>-->
 																<td><div class="media-body" style="font-family: Georgia, 'Times New Roman', Times, serif; height: 10px;">
 																
-																	<a href="#" class="btn-green edit-btn" data-id="{{ $service->id }}" style="font-family: Georgia, 'Times New Roman', Times, serif;">Edit</a>
+																	<a href="#" class="btn-green edit-btn" data-id="{{ $service->id }}" style="font-family: Georgia, 'Times New Roman', Times, serif;"><i class="fa-solid fa-pen"></i></a>
 																</div></td>
 																<td><div class="media-body" style=" height: 10px;">
 
-																	<a href="#" class="btn-green delete-btn" data-id="{{ $service->id }}" style="font-family: Georgia, 'Times New Roman', Times, serif;">Delete</a>
+																	<a href="#" class="btn-green delete-btn" data-id="{{ $service->id }}" style="font-family: Georgia, 'Times New Roman', Times, serif;"><i class="fa-solid fa-trash"></i></a>
 																</div></td>
 															</tr>
 														@endforeach
@@ -504,24 +239,24 @@
 <div id="editModal" class="modal" style="display: none;">
     <div class="modal-content">
         <span class="close" onclick="closeEditModal()">&times;</span>
-        <h2>Edit Service</h2>
+        <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;">Edit Service</h2>
         <form id="editForm" method="POST" enctype="multipart/form-data" action="{{ route('admin.services.update', ['id' => $service->id]) }}">
     	@csrf
     	@method('PUT')
             <div class="form-group">
-                <label for="service_name">Service Name:</label>
-                <input type="text" id="edit_service_name" name="service_name" class="form-control" required>
+                <label for="service_name" style="font-family: Georgia, 'Times New Roman', Times, serif;">Service Name:</label>
+                <input type="text" id="edit_service_name" style="font-family: Georgia, 'Times New Roman', Times, serif;" name="service_name" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="edit_description" name="description" class="form-control" required></textarea>
+                <label for="description" style="font-family: Georgia, 'Times New Roman', Times, serif;">Description:</label>
+                <textarea id="edit_description" style="font-family: Georgia, 'Times New Roman', Times, serif;" name="description" class="form-control" required></textarea>
             </div>
             <div class="form-group">
-                <label for="image">Image (Optional):</label>
-                <input type="file" id="edit_image" name="image" class="form-control">
+                <label for="image" style="font-family: Georgia, 'Times New Roman', Times, serif;">Image (Optional):</label>
+                <input type="file" id="edit_image" style="font-family: Georgia, 'Times New Roman', Times, serif;" name="image" class="form-control">
             </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Save</button>
+            <div class="form-group text-right" style="color: green;">
+                <button type="submit" class="btn btn-success" style="font-family: Georgia, 'Times New Roman', Times, serif;">Save</button>
             </div>
         </form>
     </div>
@@ -531,12 +266,14 @@
 <div id="deleteModal" class="modal" style="display: none;">
     <div class="modal-content">
         <span class="close" onclick="closeDeleteModal()">&times;</span>
-        <h2>Are you sure you want to delete this service?</h2>
+        <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Are you sure you want to delete this service?</h3>
         <form id="deleteForm" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger">Yes</button>
-            <button type="button" class="btn btn-secondary" onclick="closeDeleteModal()">No</button>
+			<div style="padding: 15px;">
+				<button type="submit" class="btn btn-danger" style="font-family: Georgia, 'Times New Roman', Times, serif;">Yes</button>
+				<button type="button" class="btn btn-secondary" style="font-family: Georgia, 'Times New Roman', Times, serif;" onclick="closeDeleteModal()">No</button>
+			</div>
         </form>
     </div>
 </div>
@@ -550,28 +287,7 @@
 						</div>
 					</div>
 				</div>
-				<footer class="footer">
-					<div class="container-fluid">
-						<nav class="pull-left">
-							<ul class="nav">
-								
-								<li class="nav-item">
-									<a class="nav-link" href="#">
-										Help
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">
-										Licenses
-									</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="copyright ml-auto">
-							2024, made by <a href="#">SomeOne</a>
-						</div>				
-					</div>
-				</footer>
+				
 			</div>
 		</div>
 	</div>

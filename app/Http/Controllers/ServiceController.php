@@ -9,6 +9,7 @@ class ServiceController extends Controller
 {
     public function service(){
         $services = Services::all();
+        
 
         return view('user.services', compact('services'));
         

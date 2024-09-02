@@ -102,26 +102,41 @@ class AdminserviceController extends Controller
 
 public function update(Request $request, $id)
 {
-    $request->validate([
-        'service_name' => 'required',
-        'description' => 'required',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
-    ]);
+    try {
+        // Validate the request data
+        $request->validate([
+            'service_name' => 'required',
+            'description' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
 
-    $service = Services::find($id);
-    $service->service_name = $request->service_name;
-    $service->description = $request->description;
+        // Find the service by its ID
+        $service = Services::find($id);
 
-    if ($request->hasFile('image')) {
-        $path = $request->file('image')->store('services');
-        $service->image = $path;
+        // Update the service details
+        $service->service_name = $request->service_name;
+        $service->description = $request->description;
+
+        // Handle the file upload if an image was provided
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('services', 'public');
+            $service->image = $path;
+        }
+
+        // Save the updated service details
+        $service->save();
+
+        // Redirect with success message
+        return redirect()->route('admin.services')->with('success', 'Service updated successfully!');
+    } catch (\Exception $e) {
+        // Log the error message for debugging
+        \Log::error('Service Update Error: ' . $e->getMessage());
+
+        // Return with an error message
+        return redirect()->back()->with('error', 'An error occurred while updating the service: ' . $e->getMessage());
     }
-
-    $service->save();
-
-    //return response()->json(['success' => 'Service updated successfully!']);
-    return redirect()->route('admin.services');
 }
+
 
 
 

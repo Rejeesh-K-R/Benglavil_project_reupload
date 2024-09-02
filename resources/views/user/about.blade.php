@@ -27,36 +27,16 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image" href="assets/img/img.jpeg.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   </head>
   <body>
-  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<img style="width: 100px; height: 100px; position: relative; left: 0px;" src="images/img.jpeg.png" alt="">
-	    <div class="container">
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-				<!--html here (index.html)-->
-	          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-	          <!--<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>-->
-			  <!--html here-->
-	          <li class="nav-item"><a href="service" class="nav-link">Services</a></li>
-	          <!--
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-			  -->
-			  <!--html here-->
-	          <li class="nav-item"><a href="about" class="nav-link">About</a></li>
-			 
-			<!--html here-->
-	          <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-			  <!--
-				<li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
-			-->
-	        </ul>
-	      </div>
-		  </div>
-	  </nav>
+  	@if(Auth::check() && Auth::user()->isAdmin())
+        @include('layouts.adminheader')
+    @else
+        @include('layouts.userheader')
+    @endif
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
@@ -78,9 +58,9 @@
     </section>
 
     <section class="ftco-about d-md-flex">
-    	<div class="one-half img" style="background-image: url(images/img-exp-7.png);"></div>
+    	<div class="one-half img" style="background-image: url({{ asset('storage/' . $about->image) }}); box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; position: relative; top: 15px;"></div>
     	<div class="one-half ftco-animate">
-    		<div class="overlap">
+    		<div class="overlap" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;">
 	        <div class="heading-section ftco-animate ">
 	        	<span class="subheading">@if($about->discover)
         {{ $about->discover }}
@@ -88,94 +68,68 @@
 	          <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $about->title }}</h2>
 	        </div>
 	        <div style="font-family: Georgia, 'Times New Roman', Times, serif;">
-	  				<p>{{ $about->description }}
+	  				<p style="color: #fff;">{{ $about->description }}
 					</p>
 	  			</div>
   			</div>
     	</div>
     </section>
 
-    <section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/img-exp-8.png);"  data-stellar-background-ratio="0.5">
-    	<div class="overlay"></div>
-	    <div class="container">
-	      <div class="row justify-content-center mb-5">
-	        <div class="col-md-7 heading-section text-center ftco-animate">
-	        	<span class="subheading">Testimony</span>
-	          <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Customers Says</h2>
-	          <p style="font-family: Georgia, 'Times New Roman', Times, serif; color: #fff;">Hear from our satisfied customers about their experiences with our exceptional landscaping services. Their words reflect our commitment to quality and customer satisfaction.</p>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="container-wrap">
-	      <div class="row d-flex no-gutters" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-	        <div class="col-lg align-self-sm-end ftco-animate">
-	          <div class="testimony">
-	             <blockquote>
-	                <p>&ldquo;My garden has never looked better! The team was professional, punctual, and transformed my outdoor space into a beautiful oasis&rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="images\person_4.jpg" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end">
-	          <div class="testimony overlay">
-	             <blockquote>
-	                <p>&ldquo;Excellent service from start to finish. The lawn maintenance and garden design exceeded my expectations. Highly recommend!&rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="images/person_2.jpg" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end ftco-animate">
-	          <div class="testimony">
-	             <blockquote>
-	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="images/person_3.jpg" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end">
-	          <div class="testimony overlay">
-	             <blockquote>
-	                <p>&ldquo;The new irrigation system is fantastic. Efficient, effective, and installed with minimal disruption. Great job!&rdquo;</p>
-	              </blockquote>
-	              <div class="author d-flex mt-4">
-	                <div class="image mr-3 align-self-center">
-	                  <img src="images/person_2.jpg" alt="">
-	                </div>
-	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	              </div>
-	          </div>
-	        </div>
-	        <div class="col-lg align-self-sm-end ftco-animate">
-	          <div class="testimony">
-	            <blockquote>
-	              <p>&ldquo;I am thrilled with the seasonal cleanup services. My yard is always ready for each season, thanks to their meticulous work &rdquo;</p>
-	            </blockquote>
-	            <div class="author d-flex mt-4">
-	              <div class="image mr-3 align-self-center">
-	                <img src="images/person_3.jpg" alt="">
-	              </div>
-	              <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </section>
+	<section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/img-exp-8.png);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">Testimony</span>
+                <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Customers Say</h2>
+                <p style="font-family: Georgia, 'Times New Roman', Times, serif; color: white;">
+                    Hear from our satisfied customers about their experiences with our exceptional landscaping services. 
+                    Their words reflect our commitment to quality and customer satisfaction.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-wrap">
+        <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                @foreach($testimonials->chunk(5) as $key => $testimonyChunk)
+                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                    <div class="row d-flex no-gutters">
+                        @foreach($testimonyChunk as $testimony)
+                        <div class="col-lg align-self-sm-end ftco-animate">
+                            <div class="testimony {{ $loop->iteration % 2 == 0 ? 'overlay' : '' }}" style="font-family: Georgia, 'Times New Roman', Times, serif; height: 300px;">
+                                <blockquote>
+                                    <p>&ldquo;{{ $testimony->testimonial }}&rdquo;</p>
+                                </blockquote>
+                                <div class="author d-flex mt-4">
+                                    <div class="image mr-3 align-self-center">
+                                        <img src="{{ asset('storage/' . $testimony->image) }}" alt="">
+                                    </div>
+                                    <div class="name align-self-center" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                                        {{ $testimony->name }} <span class="position">{{ $testimony->job }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
 
 	  <section class="ftco-section">
     	<div class="container">
@@ -193,22 +147,22 @@
     				<div class="row">
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url(images/img-ext-1.png);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/img-ext-1.png); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry mt-lg-4">
-		    					<a href="#" class="img" style="background-image: url(images/img-ext-2.png);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/img-ext-2.png); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url(images/img-exp-4.png);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/img-exp-4.png); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry mt-lg-4">
-		    					<a href="#" class="img" style="background-image: url(images/img-exp-5.png);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/img-exp-5.png); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;"></a>
 		    				</div>
     					</div>
     				</div>
@@ -226,16 +180,16 @@
 			  <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 				<div class="block-18 text-center">
 				  <div class="text">
-					  <div class="icon"><span class="flaticon-coffee-cup"></span></div>
+				  	<div class="icon"><i class="fa-sharp fa-solid fa-building" style="padding: 10px; font-size:300%; color: #fff"></i></div>
 					  <strong class="number" data-number="100">0</strong>
-					  <span style="font-family: Georgia, 'Times New Roman', Times, serif;">Our Branches</span>
+					  <span style="font-family: Georgia, 'Times New Roman', Times, serif; color: green">Our Branches</span>
 				  </div>
 				</div>
 			  </div>
 			  <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 				<div class="block-18 text-center">
 				  <div class="text">
-					  <div class="icon"><span class="flaticon-coffee-cup"></span></div>
+					  <div class="icon"><i class="fa-solid fa-person-circle-check" style="padding: 10px; font-size:300%; color: #fff"></i></span></div>
 					  <strong class="number" data-number="10567">0</strong>
 					  <span>Number of Project We Did</span>
 				  </div>
@@ -244,7 +198,7 @@
 			  <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 				<div class="block-18 text-center">
 				  <div class="text">
-					  <div class="icon"><span class="flaticon-coffee-cup"></span></div>
+					  <div class="icon"><i class="fa-solid fa-person" style="padding: 10px; font-size:300%; color: #fff"></i></div>
 					  <strong class="number" data-number="10567">0</strong>
 					  <span>Happy Customer</span>
 				  </div>
@@ -253,7 +207,7 @@
 			  <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 				<div class="block-18 text-center">
 				  <div class="text">
-					  <div class="icon"><span class="flaticon-coffee-cup"></span></div>
+					  <div class="icon"><i class="fa-solid fa-person-digging" style="padding: 10px; font-size:300%; color: #fff"></i></div>
 					  <strong class="number" data-number="900">0</strong>
 					  <span>Staff</span>
 				  </div>
@@ -265,60 +219,11 @@
   </div>
 </section>
 
-    <footer class="ftco-footer ftco-section img">
-    	<div class="overlay"></div>
-      <div class="container" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-        <div class="row mb-5">
-          <div class="col-lg-7 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2" style="font-family: Georgia, 'Times New Roman', Times, serif;">About Us</h2>
-              <p>Transform your outdoor space with our expert landscaping solutions. At Benglavil, we offer a 
-				wide range of services to enhance the beauty and functionality of your property. From custom 
-				landscape design and garden maintenance to hardscaping and irrigation systems, our skilled 
-				team ensures exceptional results tailored to your needs.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-
-		 
-          <div class="col-lg-2 col-md-6 mb-5 mb-md-5">
-             <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2" style="font-family: Georgia, 'Times New Roman', Times, serif;">Services</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Landscape Design Consultation</a></li>
-                <li><a href="#" class="py-2 d-block">Weekly Lawn Care</a></li>
-                <li><a href="#" class="py-2 d-block">Garden Bed Maintenance</a></li>
-                <li><a href="#" class="py-2 d-block">Pest and Weed Control</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2" style="font-family: Georgia, 'Times New Roman', Times, serif;">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+919400011292</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@benglavil.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with by <a href="https://colorlib.com" target="_blank">Benglavil</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
+	@if(Auth::check() && Auth::user()->isAdmin())
+        @include('layouts.adminfooter')
+    @else
+        @include('layouts.userfooter')
+    @endif
     
   
 

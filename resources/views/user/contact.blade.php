@@ -27,47 +27,16 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image" href="assets/img/img.jpeg.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   </head>
   <body style="font-family: Georgia, 'Times New Roman', Times, serif;">
-  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-      <img style="width: 100px; height: 100px; position: relative; left: 0px;" src="images/img.jpeg.png" alt="">
-	    <div class="container">
-	      
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-            <!--html here (index.html)-->
-	          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-	          <!--<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>-->
-            <!--html here-->
-	          <li class="nav-item"><a href="service" class="nav-link">Services</a></li>
-	          <!--
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-			  -->
-            <!--html here-->
-        <li class="nav-item"><a href="about" class="nav-link">About</a></li>
-			  <!--
-	          <li class="nav-item dropdown">
-				
-              <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.html">Shop</a>
-                <a class="dropdown-item" href="product-single.html">Single Product</a>
-                <a class="dropdown-item" href="room.html">Cart</a>
-                <a class="dropdown-item" href="checkout.html">Checkout</a>
-              </div>
-            </li>-->
-            <!--html here-->
-	          <li class="nav-item active"><a href="contact" class="nav-link">Contact</a></li>
-            <!--
-	          <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
-          -->
-	        </ul>
-	      </div>
-		  </div>
-	  </nav>
+  @if(Auth::check() && Auth::user()->isAdmin())
+        @include('layouts.adminheader')
+    @else
+        @include('layouts.userheader')
+    @endif
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
@@ -88,146 +57,79 @@
       </div>
     </section>
 
-    <section class="ftco-section contact-section" style="background-image: url(images/bg_4.jpg);">
-      <div class="container mt-5">
-        <div class="row block-9">
-					<div class="col-md-4 contact-info ftco-animate">
-						<div class="row">
-							<div class="col-md-12 mb-4">
-	              <h2 class="h4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Contact Information</h2>
-	            </div>
-	            <div class="col-md-12 mb-3">
-	              <p style="color: #fff;"><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-	            </div>
-	            <div class="col-md-12 mb-3">
-	              <p><span >Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-	            </div>
-	            <div class="col-md-12 mb-3">
-	              <p><span >Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-	            </div>
-	            <div class="col-md-12 mb-3">
-	              <p><span ">Website:</span> <a href="#">yoursite.com</a></p>
-	            </div>
-						</div>
-					</div>
-					<div class="col-md-1"></div>
-          <div class="col-md-6 ftco-animate">
-            <form method="post" action="{{route('contact.store')}}" class="contact-form">
-              @csrf
-            	<div class="row">
-            		<div class="col-md-6">
-	                <div class="form-group" >
-	                  <input type="text" name="name" class="form-control" placeholder="Your Name">
-	                </div>
-                </div>
-                <div class="col-md-6">
-	                <div class="form-group">
-	                  <input type="text" name="mobile" class="form-control" placeholder="Your mobile">
-	                </div>
-	                </div>
-              </div>
-              <div class="form-group">
-                <input type="text" name="email" class="form-control" placeholder="email">
-              </div>
-              <div class="form-group">
-                <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <button type="submit" style="padding:20px; width:35%;" class="btn btn-primary">Send Message</button>
-              <!--<div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>-->
-            </form>
+    <section class="ftco-section contact-section">
+  <style>
+    .contact-form .form-control::placeholder {
+      color: #000000; /* Placeholder text color */
+    }
+    .contact-form .form-control {
+      color: #000000 !important; /* Ensures input text is black */
+    }
+  </style>
+  <div class="container mt-5">
+    <div class="row block-9">
+      <div class="col-md-4 contact-info ftco-animate">
+        <div class="row">
+          <div class="col-md-12 mb-4">
+            <h2 class="h4" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000000;">Contact Information</h2>
+          </div>
+          <div class="col-md-12 mb-3">
+            <p style="color: #000000;"><span style="color: #000000;">Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+          </div>
+          <div class="col-md-12 mb-3">
+            <p><span style="color: #000000;">Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+          </div>
+          <div class="col-md-12 mb-3">
+            <p><span style="color: #000000;">Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+          </div>
+          <div class="col-md-12 mb-3">
+            <p><span style="color: #000000;">Website:</span> <a href="#">yoursite.com</a></p>
           </div>
         </div>
       </div>
-    </section>
+      <div class="col-md-1"></div>
+      <div class="col-md-6 ftco-animate">
+        <form method="post" action="{{route('contact.store')}}" class="contact-form">
+          @csrf
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Your Name">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" name="mobile" class="form-control" placeholder="Your Mobile">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" name="email" class="form-control" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+          </div>
+          <button type="submit" style="padding:20px; width:35%;" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+   
+
+
     <section>
       <div class="col-md-12"><iframe style="width: 1350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d355688.94458197936!2d76.52036054809118!3d9.94687135613845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1722513010961!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     </section>
 
-    <footer class="ftco-footer ftco-section img">
-    	<div class="overlay"></div>
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2" style="font-family: Georgia, 'Times New Roman', Times, serif;">About Us</h2>
-              <p>Transform your outdoor space with our expert landscaping solutions. At Benglavil, we offer a 
-				wide range of services to enhance the beauty and functionality of your property. From custom 
-				landscape design and garden maintenance to hardscaping and irrigation systems, our skilled 
-				team ensures exceptional results tailored to your needs.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-
-		  <!--
-          <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Recent Blog</h2>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-		-->
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
-             <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2" style="font-family: Georgia, 'Times New Roman', Times, serif;">Services</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Landscape Design Consultation</a></li>
-                <li><a href="#" class="py-2 d-block">Weekly Lawn Care</a></li>
-                <li><a href="#" class="py-2 d-block">Garden Bed Maintenance</a></li>
-                <li><a href="#" class="py-2 d-block">Pest and Weed Control</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2" style="font-family: Georgia, 'Times New Roman', Times, serif;">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+919400011292</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@benglavil.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with by <a href="https://colorlib.com" target="_blank">Benglavil</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    @if(Auth::check() && Auth::user()->isAdmin())
+        @include('layouts.adminfooter')
+    @else
+        @include('layouts.userfooter')
+    @endif
     
   
 

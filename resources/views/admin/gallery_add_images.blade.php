@@ -2,16 +2,17 @@
 <html>
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>Services</title>
+	<title>Gallery</title>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
 	<link rel="stylesheet" href="{{asset('assets/css/ready.css') }}">
 	<link rel="stylesheet" href="{{asset('assets/css/demo.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
-	<link rel="icon" type="image" href="assets/img/img.jpeg.png">
+	<link rel="icon" type="image" href="{{asset('assets/img/img.jpeg.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 	<style>
         .row {
@@ -91,6 +92,17 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+
+
+        .modal {
+    z-index: 1050;
+}
+
+.modal-backdrop {
+    z-index: 1040;
+}
+
     </style>
 
 
@@ -100,7 +112,7 @@
 	@extends('layouts.app')
 	@section('content')
 	<div class="main-panel">
-				<div class="content">
+				<div class="content" style="padding: 20px;">
 					<div class="container-fluid">
 						<div class="row">
 							
@@ -117,31 +129,25 @@
         
         
     </div>
+<!--Star's Here-->
 
-    <!-- The Modal -->
-	 
-    
+<div class="container" style="font-family: Georgia, 'Times New Roman', Times, serif; padding:18px; height: 385px;">
+    <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;">Add Images to {{ $gallery->title }}</h2>
+    <form action="{{ route('admin.gallery.storeImages', $gallery->id) }}" method="POST" style="padding: 20px" enctype="multipart/form-data">
+        @csrf
+        <div class="form-group">
+            <label for="images">Select Images:</label>
+            <input type="file" name="images[]" class="form-control" style="width: 270px; height: 45px;" multiple>
+        </div>
+        <div style="padding: 15px;">
+                <button type="submit" class="btn btn-success">Upload Images</button>
+                <a href="{{ route('admin.gallery.showAdmin', $gallery->id) }}" class="btn btn-secondary" style="font-family: Georgia, 'Times New Roman', Times, serif;">Back</a>
+        </div>
+    </form>
+</div>
+<!--End's Here-->
             
-            <h3 style="font-family: Georgia, 'Times New Roman', Times, serif; ">Add New Service</h3>
-            <form id="addServiceForm" action="{{ route('admin.services.store') }}" method="POST" enctype="multipart/form-data">
-			@csrf
-				<div class="form-group">
-					<label for="service_name">Service Name:</label>
-					<input type="text" id="service_name" name="service_name" required>
-				</div>
-				<div class="form-group">
-					<label for="description">Service Description:</label>
-					<textarea id="description" name="description" required></textarea>
-				</div>
-				<div class="form-group">
-					<label for="image">Service Image:</label>
-					<input type="file" id="image" name="image">
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary">Save</button>
-					<a href="{{ route('admin.services') }}" class="btn btn-danger">Cancel</a>
-				</div>
-			</form>
+            
 
         
                                             </div>
@@ -160,28 +166,7 @@
 		</div>
 	</div>
 </div>
-<!-- Modal 
-<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header bg-primary">
-				<h6 class="modal-title"><i class="la la-frown-o"></i> Under Development</h6>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body text-center">									
-				<p>Currently the pro version of the <b>Ready Dashboard</b> Bootstrap is in progress development</p>
-				<p>
-				<b>We'll let you know when it's done</b></p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
--->
+
 </body>
 <script src="{{asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
 <script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
@@ -196,85 +181,12 @@
 <script src="{{asset('assets/js/plugin/chart-circle/circles.min.js') }}"></script>
 <script src="{{asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
 <script src="{{asset('assets/js/ready.min.js') }}"></script>
-<script>
-	$('#displayNotif').on('click', function(){
-		var placementFrom = $('#notify_placement_from option:selected').val();
-		var placementAlign = $('#notify_placement_align option:selected').val();
-		var state = $('#notify_state option:selected').val();
-		var style = $('#notify_style option:selected').val();
-		var content = {};
-
-		content.message = 'Turning standard Bootstrap alerts into "notify" like notifications';
-		content.title = 'Bootstrap notify';
-		if (style == "withicon") {
-			content.icon = 'la la-bell';
-		} else {
-			content.icon = 'none';
-		}
-		content.url = 'index.html';
-		content.target = '_blank';
-
-		$.notify(content,{
-			type: state,
-			placement: {
-				from: placementFrom,
-				align: placementAlign
-			},
-			time: 1000,
-		});
-	});
 
 
-	 // Get the modal
-	 var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("addServiceBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-	modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-	modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-	if (event.target == modal) {
-		modal.style.display = "none";
-	}
-}
-
-// Handle form submission
-document.getElementById("addServiceForm").onsubmit = function(event) {
-	event.preventDefault();
-	
-	var service_name = document.getElementById("service_name").value;
-	var description = document.getElementById("description").value;
-	var image = document.getElementById("image").value;
-
-	// Here, you would typically use AJAX to send the form data to your PHP backend.
-	// For demonstration, we'll just log the inputs to the console.
-	console.log({
-		service_name: service_name,
-		description: description,
-		image: image
-	});
-
-	// Clear the form
-	document.getElementById("addServiceForm").reset();
-
-	// Close the modal
-	modal.style.display = "none";
-}
-</script>
 
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </html>
