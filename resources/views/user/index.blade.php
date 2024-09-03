@@ -55,7 +55,7 @@
               <h1 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Transforming Your Outdoor Spaces</h1>
               <p class="mb-4 mb-md-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">Expert Landscaping and Hardscaping Solutions
 			</p>
-              <p><a href="#1" class="custom-btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px;">Let's Begin</a></p>
+              <p><a href="#1" class="custom-btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px; padding: 25px; position: relative; top:-10px; width: 150px; height: 60px;">Let's Begin</a></p>
             </div>
 
           </div>
@@ -71,7 +71,7 @@
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Amazing Designs &amp; Beautiful Places</h1>
               <p class="mb-4 mb-md-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">EXPERT LANDSCAPING AND HARDSCAPING SOLUTIONS</p>
-              <p><a href="#1" class="custom-btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px;">Let's Begin</a> </p>
+              <p><a href="#1" class="custom-btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px; padding: 25px; position: relative; top:-10px; width: 150px; height: 60px;">Let's Begin</a> </p>
             </div>
 
           </div>
@@ -88,7 +88,7 @@
               <h1 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Transforming Your Outdoor Spaces</h1>
               <p class="mb-4 mb-md-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">EXPERT LANDSCAPING AND HARDSCAPING SOLUTIONS
 			</p>
-              <p><a href="#1" class="custom-btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px;">Let's Begin</a> </p>
+              <p><a href="#1" class="custom-btn btn-primary p-3 px-xl-4 py-xl-3" style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px; padding: 25px; position: relative; top:-10px; width: 150px; height: 60px;">Let's Begin</a> </p>
             </div>
 
           </div>
@@ -105,21 +105,21 @@
 	    					<div class="icon"><span class="icon-phone"></span></div>
 	    					<div class="text">
 	    						<h3 style="color: black;">	+91 940 001 1292</h3>
-	    						<p style="font-family: Georgia, 'Times New Roman', Times, serif;">A small river named Duden flows by their place and supplies.</p>
+	    						<p class="popins">A small river named Duden flows by their place and supplies.</p>
 	    					</div>
 	    				</div>
 	    				<div class="col-md-4 d-flex ftco-animate" style="color: black;">
 	    					<div class="icon"><span class="icon-my_location"></span></div>
 	    					<div class="text">
-	    						<h3 style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">198 West 21th Street</h3>
-	    						<p style="font-family: Georgia, 'Times New Roman', Times, serif;">	203 Fake St. Mountain View, San Francisco, California, USA</p>
+	    						<h3 class="popins" style="color: #000;">198 West 21th Street</h3>
+	    						<p class="popins">	203 Fake St. Mountain View, San Francisco, California, USA</p>
 	    					</div>
 	    				</div>
 	    				<div class="col-md-4 d-flex ftco-animate" style="color: black;">
 	    					<div class="icon"><span class="icon-clock-o"></span></div>
 	    					<div class="text">
-	    						<h3 style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">Open Monday-Friday</h3>
-	    						<p style="font-family: Georgia, 'Times New Roman', Times, serif;">8:00am - 9:00pm</p>
+	    						<h3 class="popins" style="color: black;">Open Monday-Friday</h3>
+	    						<p class="popins">8:00am - 9:00pm</p>
 	    					</div>
 	    				</div>
 	    			</div>
@@ -141,7 +141,7 @@
 	          <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #fff;">{{ $about->title }}</h2>
 	        </div>
 	        <div>
-	  				<p style="font-family: Georgia, 'Times New Roman', Times, serif; color: #fff;">{{ $about->description }}
+	  				<p class="popins" style="color: #fff;">{{ $about->description }}
 					</p>
 	  			</div>
   			</div>
@@ -156,34 +156,34 @@
                     <div class="row">
                         <div class="col-md-4 ftco-animate">
                             <div class="media d-block text-center block-6 services" style="border-radius: 8px;">
-                                <div class="icon d-flex justify-content-center align-items-center mb-5">
-                                    <img style="width: 183%; border-radius: 8px; position: relative; top: 10px;  border-radius: 8px; position: relative; top: 10px; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://www.southernliving.com/thmb/7r2syY01IwYy239KpsPun1RNF5c=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/1072701_coled170-173_0-51494988d09c405cbc52a511037e317c.jpg" alt="A picture">
+                                <div class="mt-lg-4">
+                                    <img style="width: 100%; border-radius: 8px;" src="images/New_pic_aaaded.webp" alt="A picture">
                                 </div>
-                                <div class="media-body" style="padding: 8px; position: relative; top: 30px;">
+                                <div class="media-body" style="padding: 8px;">
                                     <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; ">Landscaping</h3>
-                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif; border-radius: 8px;">We offer comprehensive landscaping services to create stunning outdoor environments. Our team ensures that every detail is meticulously planned and executed.</p>
+                                    <p class="popins">We offer comprehensive landscaping services to create stunning outdoor environments. Our team ensures that every detail is meticulously planned and executed.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 ftco-animate">
                             <div class="media d-block text-center block-6 services" style=" border-radius: 8px;">
-                                <div class="icon d-flex justify-content-center align-items-center mb-5">
-                                    <img style="width: 183%; border-radius: 8px; position: relative; top: 10px; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://www.southernliving.com/thmb/riqyDTLrFz_WvTa9FwiCzhO5u44=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2108601_puopo0143_0-391a4f5c46754298b48304424b9ff99e.jpg" alt="">
+                                <div class="mt-lg-4">
+                                    <img style="width: 100%; border-radius: 8px;" src="images/New_pic_aaaded_02.webp" alt="">
                                 </div>
-                                <div class="media-body" style="padding: 25px;">
+                                <div class="media-body" style="padding: 8px;">
                                     <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Hardscaping</h3>
-                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Our hardscaping solutions include patios, walkways, retaining walls, and more. We use high-quality materials to ensure durability and aesthetic appeal.</p>
+                                    <p class="popins">Our hardscaping solutions include patios, walkways, retaining walls, and more. We use high-quality materials to ensure durability and aesthetic appeal.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 ftco-animate">
                             <div class="media d-block text-center block-6 services" style="border-radius: 8px;">
-                                <div class="icon d-flex justify-content-center align-items-center mb-5">
-                                    <img style="width: 183%; border-radius: 8px; position: relative; top: 10px; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://www.southernliving.com/thmb/5aKuI1Unv4ZuMjIOARXLuDSqJac=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2756302_CurbAppeal_31w-52eabad4148f49a2927bc75af272cd49.jpg" alt="">
+                                <div class="mt-lg-4">
+                                    <img style="width: 100%; border-radius: 8px;" src="images/New_pic_aaaded_03.webp" alt="">
                                 </div>
-                                <div class="media-body" style="padding: 8px; position: relative; top: 30px;">
+                                <div class="media-body" style="padding: 8px;">
                                     <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Outdoor Lighting</h3>
-                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Enhance your landscape with our outdoor lighting services. We design and install lighting solutions that highlight the beauty of your outdoor spaces.</p>
+                                    <p class="popins">Enhance your landscape with our outdoor lighting services. We design and install lighting solutions that highlight the beauty of your outdoor spaces.</p>
                                 </div>
                             </div>
                         </div>
@@ -194,34 +194,34 @@
                         <!-- Repeat the same content for the second slide -->
                         <div class="col-md-4 ftco-animate">
 							<div class="media d-block text-center block-6 services" style="border-radius: 8px;">
-								<div class="icon d-flex justify-content-center align-items-center mb-5">
-                                    <img style="width: 183%; border-radius: 8px; position: relative; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://images.landscapingnetwork.com/pictures/images/401x227Exact/backyard-landscaping_1/wheelchair-accessible-backyard-the-cornerstone-landscape-group_543.jpg" alt="A picture">
-                                </div>
-                                <div class="media-body" style="padding: 8px; position: relative; top: 30px;">
+								
+                                    <img style="width: 100%; border-radius: 8px; position: relative;" src="images/New_pic_aaaded_04.webp" alt="A picture">
+
+                                <div class="media-body" style="padding: 8px;">
                                     <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Exterior Designing</h3>
-                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">We offer great and beautiful looking exterior services like no other to create stunning environments. Our team of professionals ensures that every detail is meticulously planned and executed so that there is a beautiful smile on your face.</p>
+                                    <p style="font-family: 'Poppins">We offer great and beautiful looking exterior services like no other to create stunning environments. Our team of professionals ensures that every detail is meticulously planned and executed so that there is a beautiful smile on your face.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 ftco-animate">
 							<div class="media d-block text-center block-6 services" style="border-radius: 8px;">
                                 
-                                    <img style="width: 53%; border-radius: 8px; position: relative; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://wirtzanddaughters.com/wp-content/uploads/2023/02/EP-firepit2-1-e1675877945185-1024x827.jpg" alt="">
+                                    <img style="width: 70%; border-radius: 8px;" src="images/New_pic_aaaded_05.webp" alt="">
                                
-                                <div class="media-body" style="padding: 15px;">
+                                <div class="media-body" style="padding: 8px;">
                                     <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Garden Installations and Maintanance</h3>
-                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Our handpicked team of specilized worked will make your garden look more fresh and beatuiful to see, We use high-quality materials to ensure durability and elagont looks. Our garden management team will look after your garden and maintain it for you.</p>
+                                    <p class="popins">Our handpicked team of specilized worked will make your garden look more fresh and beatuiful to see, We use high-quality materials to ensure durability and elagont looks. Our garden management team will look after your garden and maintain it for you.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 ftco-animate">
-							<div class="media d-block text-center block-6 services" style="border-radius: 8px;">
-                                <div class="icon d-flex justify-content-center align-items-center mb-5">
-                                    <img style="width: 195%; border-radius: 8px; position: relative; box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px 0px, rgba(0, 0, 0, 0.3) 0px 10px 10px 0px, rgba(0, 0, 0, 0.2) 0px 15px 15px 0px, rgba(0, 0, 0, 0.1) 0px 20px 20px 0px, rgba(0, 0, 0, 0.5) 0px 25px 25px 0px;" src="https://sparkle.lighting/cdn/shop/collections/outdoor-lights-897811.jpg?v=1705333647" alt="">
+							<div class="media d-block text-center block-6 services">
+                                
+                                    <img style="width: 100%; border-radius: 8px;" src="images/New_pic_aaaded_06.webp" alt="">
                                 </div>
-                                <div class="media-body" style="padding: 25px;">
-                                    <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif;">Seasonal Cleanup Services</h3>
-                                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Tired of clean up after a bad season, well then here is your solution for you!!!, We are here to take care of your problems for you. Out team of experts will take care of your work's of cleaning up after the end of each seasons.</p>
+                                <div class="media-body" style="padding: 8px; position: relative; top: -28px;">
+                                    <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;">Seasonal Cleanup Services</h3>
+                                    <p class="popins">Tired of clean up after a bad season, well then here is your solution for you!!!, We are here to take care of your problems for you. Out team of experts will take care of your work's of cleaning up after the end of each seasons.</p>
                                 </div>
                             </div>
                         </div>
@@ -249,7 +249,7 @@
     				<div class="heading-section text-md-right ftco-animate">
 	          	<span class="subheading">Discover</span>
 	            <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">Our Services</h2>
-	            <p class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">{{ $discoverService->description }}
+	            <p class="mb-4" class="popins" style="color: black;">{{ $discoverService->description }}
 					</p>
 	            <p><a href="service" class="btn btn-primary btn-outline-primary px-4 py-3" style="font-family: Georgia, 'Times New Roman', Times, serif; box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;">View More </a></p>
 	          </div>
@@ -293,7 +293,7 @@
 		              <div class="text">
 		              	<div class="icon"><i class="fa-sharp fa-solid fa-building" style="padding: 10px; font-size:300%; color: #fff;"></i></div>
 		              	<strong class="number" data-number="100">0</strong>
-		              	<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Our Branches</span>
+		              	<span  class="popins">Our Branches</span>
 		              </div>
 		            </div>
 		          </div>
@@ -302,7 +302,7 @@
 		              <div class="text">
 		              	<div class="icon"><i class="fa-solid fa-person-circle-check" style="padding: 10px; font-size:300%; color: #fff;"></i></div>
 		              	<strong class="number" data-number="10567">0</strong>
-		              	<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Number of Project We Did</span>
+		              	<span  class="popins">Number of Project We Did</span>
 		              </div>
 		            </div>
 		          </div>
@@ -311,7 +311,7 @@
 		              <div class="text">
 		              	<div class="icon"><i class="fa-solid fa-person" style="padding: 10px; font-size:300%; color: #fff;"></i></div>
 		              	<strong class="number" data-number="10567">0</strong>
-		              	<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Happy Customer</span>
+		              	<span  class="popins">Happy Customer</span>
 		              </div>
 		            </div>
 		          </div>
@@ -320,7 +320,7 @@
 		              <div class="text">
 		              	<div class="icon" style="color: #fff;"><i class="fa-solid fa-person-digging" style="padding: 10px; font-size:300%; color: #fff;"></i></div>
 		              	<strong class="number" data-number="900">0</strong>
-		              	<span style="font-family: Georgia, 'Times New Roman', Times, serif;">Staff</span>
+		              	<span  class="popins">Staff</span>
 		              </div>
 		            </div>
 		          </div>
@@ -499,7 +499,153 @@
 	</section>
 
 
+<!--
+		<section class="ftco-menu">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+          	<span class="subheading">Discover</span>
+            <h2 class="mb-4">Our Products</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+    		<div class="row d-md-flex">
+	    		<div class="col-lg-12 ftco-animate p-md-5">
+		    		<div class="row">
+		          <div class="col-md-12 nav-link-wrap mb-5">
+		            <div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+		              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Main Dish</a>
 
+		              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Drinks</a>
+
+		              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Desserts</a>
+		            </div>
+		          </div>
+		          <div class="col-md-12 d-flex align-items-center">
+		            
+		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
+
+		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
+		              	<div class="row">
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-1.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Grilled Beef</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-2.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Grilled Beef</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-3.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Grilled Beef</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              	</div>
+		              </div>
+
+		              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
+		                <div class="row">
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-1.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Lemonade Juice</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-2.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Pineapple Juice</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-3.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Soda Drinks</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              	</div>
+		              </div>
+
+		              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
+		                <div class="row">
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-1.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Hot Cake Honey</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-2.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Hot Cake Honey</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-3.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Hot Cake Honey</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              	</div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+    	</div>
+    </section>
+	-->
 
 	
 
@@ -511,7 +657,7 @@
             <div class="col-md-7 heading-section text-center ftco-animate">
                 <span class="subheading">Testimony</span>
                 <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Customers Say</h2>
-                <p style="font-family: Georgia, 'Times New Roman', Times, serif; color: white;">
+                <p class="popins" style="color: white;">
                     Hear from our satisfied customers about their experiences with our exceptional landscaping services. 
                     Their words reflect our commitment to quality and customer satisfaction.
                 </p>
@@ -526,7 +672,7 @@
                     <div class="row d-flex no-gutters">
                         @foreach($testimonyChunk as $testimony)
                         <div class="col-lg align-self-sm-end ftco-animate">
-                            <div class="testimony {{ $loop->iteration % 2 == 0 ? 'overlay' : '' }}" style="font-family: Georgia, 'Times New Roman', Times, serif;  height: 300px;">
+                            <div class="testimony {{ $loop->iteration % 2 == 0 ? 'overlay' : '' }}" class="popins" style="height: 300px;">
                                 <blockquote>
                                     <p>&ldquo;{{ $testimony->testimonial }}&rdquo;</p>
                                 </blockquote>
@@ -534,7 +680,7 @@
                                     <div class="image mr-3 align-self-center">
                                         <img style="border-radius: 20px;" src="{{ asset('storage/' . $testimony->image) }}" alt="">
                                     </div>
-                                    <div class="name align-self-center" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                                    <div class="name align-self-center"  class="popins">
                                         {{ $testimony->name }} <span class="position">{{ $testimony->job }}</span>
                                     </div>
                                 </div>
@@ -560,8 +706,148 @@
 
 
 
-
-
+<!--
+    <section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/img-exp-8.png);"  data-stellar-background-ratio="0.5">
+    	<div class="overlay"></div>
+	    <div class="container">
+	      <div class="row justify-content-center mb-5">
+	        <div class="col-md-7 heading-section text-center ftco-animate">
+	        	<span class="subheading">Testimony</span>
+	          <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Customers Says</h2>
+	          <p style="font-family: Georgia, 'Times New Roman', Times, serif; color: white;">Hear from our satisfied customers about their experiences with our exceptional landscaping services. Their words reflect our commitment to quality and customer satisfaction.</p>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="container-wrap">
+	      <div class="row d-flex no-gutters">
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+	             <blockquote>
+	                <p>&ldquo;My garden has never looked better! The team was professional, punctual, and transformed my outdoor space into a beautiful oasis&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images\person_4.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center" style="font-family: Georgia, 'Times New Roman', Times, serif;">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end">
+	          <div class="testimony overlay" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+	             <blockquote>
+	                <p>&ldquo;Excellent service from start to finish. The lawn maintenance and garden design exceeded my expectations. Highly recommend!&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images/person_2.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+	             <blockquote>
+	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images/person_3.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end">
+	          <div class="testimony overlay" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+	             <blockquote>
+	                <p>&ldquo;The new irrigation system is fantastic. Efficient, effective, and installed with minimal disruption. Great job!&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images/person_2.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+	            <blockquote>
+	              <p>&ldquo;I am thrilled with the seasonal cleanup services. My yard is always ready for each season, thanks to their meticulous work &rdquo;</p>
+	            </blockquote>
+	            <div class="author d-flex mt-4">
+	              <div class="image mr-3 align-self-center">
+	                <img src="images/person_3.jpg" alt="">
+	              </div>
+	              <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+-->
+<!--
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">Recent from blog</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              </a>
+              <div class="text py-4 d-block">
+              	<div class="meta">
+                  <div><a href="#">Sept 10, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              </a>
+              <div class="text py-4 d-block">
+              	<div class="meta">
+                  <div><a href="#">Sept 10, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              </a>
+              <div class="text py-4 d-block">
+              	<div class="meta">
+                  <div><a href="#">Sept 10, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+-->
 		
 <section class="ftco-appointment">
 	<div class="overlay"></div>
@@ -636,3 +922,7 @@
 </html>
 
 
+<!--
+color:#05ef1a
+black background pic : images/bg_4.jpg
+-->

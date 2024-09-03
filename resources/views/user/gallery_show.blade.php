@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{asset('css/icomoon.css') }}">
     <link rel="stylesheet" href="{{asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
     <link rel="icon" type="image" href="{{asset('assets/img/img.jpeg.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -57,9 +58,9 @@
     <p>{{ $gallery->description }}</p>
     <div class="row">
         @foreach($gallery->images as $image)
-        <div class="col-md-4" style="padding: 10px;">
+        <div class="col-md-4" style="padding: 14px;">
         <!-- style="width: 450px; height: 325px; " -->
-            <img style="border-radius: 15px 50px;  box-shadow: rgba(0, 0, 0, 0.4) 5px 5px, rgba(0, 0, 0, 0.3) 10px 10px, rgba(0, 0, 0, 0.2) 15px 15px, rgba(0, 0, 0, 0.1) 20px 20px, rgba(0, 0, 0, 0.05) 25px 25px;" src="{{ asset('storage/'.$image->image_path) }}" class="img-fluid" alt="{{ $gallery->title }}">
+            <img style="border-radius: 15px 15px;  box-shadow: rgba(0, 0, 0, 0.4) 5px 5px, rgba(0, 0, 0, 0.3) 10px 10px, rgba(0, 0, 0, 0.2) 15px 15px, rgba(0, 0, 0, 0.1) 20px 20px, rgba(0, 0, 0, 0.05) 25px 25px;" src="{{ asset('storage/'.$image->image_path) }}" class="img-fluid" alt="{{ $gallery->title }}">
         </div>
         @endforeach
     </div>

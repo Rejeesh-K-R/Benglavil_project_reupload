@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="{{asset('assets/css/ready.css') }}">
 	<link rel="stylesheet" href="{{asset('assets/css/demo.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
 	<link rel="icon" type="image" href="{{asset('assets/img/img.jpeg.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -16,7 +17,7 @@
 
 	<style>
         .row {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: popins;
         }
 
         .card-title {
@@ -147,26 +148,26 @@
         <tbody>
             @foreach($galleries as $gallery)
             <tr>
-                <td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $gallery->title }}</td>
-                <td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $gallery->description }}</td>
-                <td style="font-family: Georgia, 'Times New Roman', Times, serif;"><img src="{{ asset('storage/'.$gallery->cover_image) }}" alt="Cover Image" width="100"></td>
+                <td style="font-family: popins;">{{ $gallery->title }}</td>
+                <td style="font-family: popins;">{{ $gallery->description }}</td>
+                <td style="font-family: popins;"><img src="{{ asset('storage/'.$gallery->cover_image) }}" alt="Cover Image" width="100"></td>
                 <td><a href="{{ route('admin.gallery.showAdmin', $gallery->id) }}" class="btn btn-info" style="font-family: Georgia, 'Times New Roman', Times, serif;">View</a></td>
-                <td style="font-family: Georgia, 'Times New Roman', Times, serif;"><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $gallery->id }}">Delete</button></td>
+                <td style="font-family: popins;"><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $gallery->id }}">Delete</button></td>
             </tr>
             <!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteModal{{ $gallery->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ $gallery->id }}" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document"> <!-- Added modal-lg class for larger modal -->
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel{{ $gallery->id }}" style="font-family: Georgia, 'Times New Roman', Times, serif;">Confirm Delete</h5>
+                <h5 class="modal-title" id="deleteModalLabel{{ $gallery->id }}" style="font-family: popins;">Confirm Delete</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Are you sure you want to delete this gallery?</p>
+                <p style="font-family: popins;">Are you sure you want to delete this gallery?</p>
             </div>
-            <div class="modal-footer" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+            <div class="modal-footer" style="font-family: popins;">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <form action="{{ route('admin.gallery.destroy', $gallery->id) }}" method="POST" style="display:inline;">
                     @csrf

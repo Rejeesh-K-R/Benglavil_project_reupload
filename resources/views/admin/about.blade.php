@@ -93,10 +93,10 @@
 								<div class="card">
 									<div class="card-header">
 										<div class="row">
-                                            <div class="card-title" style="font-family: Georgia, 'Times New Roman', Times, serif; padding: 26px;">About</div>
+                                            <div class="card-title" style="font-family: popins; padding: 26px;">About</div>
                                             <span class="button" style="position: absolute;left: 890px; padding:20px;">
-                                                <div class="media-body" style="font-family: Georgia, 'Times New Roman', Times, serif; height: 10px;">
-												<a href="#" class="btn-green" style="font-family: Georgia, 'Times New Roman', Times, serif;" onclick="openModal()"><i class="fa-solid fa-pen"></i>Edit</a>
+                                                <div class="media-body" style="font-family: popins; height: 10px;">
+												<a href="#" class="btn-green" style="font-family: popins;" onclick="openModal()"><i class="fa-solid fa-pen"></i>Edit</a>
                                                     
                                                 </div>
                                                 
@@ -104,28 +104,28 @@
 											<div id="editModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2 class="align-center" style="font-family: Georgia, 'Times New Roman', Times, serif;">Edit Information</h2>
+            <h2 class="align-center" style="font-family: popins;">Edit Information</h2>
             <form id="editForm" action="{{ route('admin.about.update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="discover" style="font-family: Georgia, 'Times New Roman', Times, serif;">Discover Our Story (Optional):</label>
-                    <input type="text" id="discover" name="discover" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" value="{{ $about->discover ?? '' }}">
+                    <label for="discover" style="font-family: popins;">Discover Our Story (Optional):</label>
+                    <input type="text" id="discover" name="discover" class="form-control" style="font-family: popins;" value="{{ $about->discover ?? '' }}">
                 </div>
                 <div class="form-group">
-                    <label for="title" style="font-family: Georgia, 'Times New Roman', Times, serif;">Title:</label>
-                    <input type="text" id="title" name="title" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" required value="{{ $about->title ?? '' }}">
+                    <label for="title" style="font-family: popins;">Title:</label>
+                    <input type="text" id="title" name="title" class="form-control" style="font-family: popins;" required value="{{ $about->title ?? '' }}">
                 </div>
                 <div class="form-group">
-                    <label for="description" style="font-family: Georgia, 'Times New Roman', Times, serif;">Description:</label>
-                    <textarea id="description" name="description" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" required>{{ $about->description ?? '' }}</textarea>
+                    <label for="description" style="font-family: popins;">Description:</label>
+                    <textarea id="description" name="description" class="form-control" style="font-family: popins;" required>{{ $about->description ?? '' }}</textarea>
                 </div>
                 <div class="form-group">
-        <label for="image" style="font-family: Georgia, 'Times New Roman', Times, serif;">Upload Image:</label>
-        <input type="file" id="image" name="image" style="font-family: Georgia, 'Times New Roman', Times, serif;" class="form-control">
+        <label for="image" style="font-family: popins;">Upload Image:</label>
+        <input type="file" id="image" name="image" style="font-family: popins;" class="form-control">
     </div>
     <div class="form-group text-right" style="color:green;">
-        <button type="submit" class="btn btn-success" style="font-family: Georgia, 'Times New Roman', Times, serif;">Save</button>
+        <button type="submit" class="btn btn-success" style="font-family: popins;">Save</button>
     </div>
 </form>
         </div>
@@ -136,10 +136,10 @@
 										<table class="table table-hover">
 											<thead>
 												<tr>
-													<th scope="col"><h1 style="font-family: Georgia, 'Times New Roman', Times, serif;"><small> @if($about->discover)
+													<th scope="col"><h1 style="font-family: popins;"><small> @if($about->discover)
         {{ $about->discover }}
     @endif {{ $about->title }}</small></h1>
-    <tr style="font-family: Georgia, 'Times New Roman', Times, serif; padding:20px;">
+    <tr style="font-family: popins; padding:20px;">
 													<th scope="col">Description</th>
 													<th scope="col">Image</th>
 												</tr>
@@ -148,7 +148,7 @@
 											</thead>
 											<tbody>
 												<tr>
-													<td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $about->description }}</td>
+													<td style="font-family: popins;">{{ $about->description }}</td>
                                                     <td>@if($about && $about->image)
     <img src="{{ asset('storage/' . $about->image) }}" alt="About Image" class="img-fluid">
 @endif

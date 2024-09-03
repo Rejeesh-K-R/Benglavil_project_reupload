@@ -45,19 +45,19 @@
         <form action="{{ route('admin.testimonials.store') }}" method="POST" style="width: 300px;" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="name" style="font-family: Georgia, 'Times New Roman', Times, serif;">Name:</label>
-                <input type="text" id="name" style="font-family: Georgia, 'Times New Roman', Times, serif;" name="name" class="form-control" required>
+                <label for="name" style="popins">Name:</label>
+                <input type="text" id="name" style="popins" name="name" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="testimonial" style="font-family: Georgia, 'Times New Roman', Times, serif;">Testimonial:</label>
-                <textarea id="testimonial" name="testimonial" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" required></textarea>
+                <label for="testimonial" style="popins">Testimonial:</label>
+                <textarea id="testimonial" name="testimonial" class="form-control" style="popins" required></textarea>
             </div>
             <div class="form-group">
-                <label for="job" style="font-family: Georgia, 'Times New Roman', Times, serif;">Job:</label>
-                <input type="text" id="job" name="job" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" required>
+                <label for="job" style="popins">Job:</label>
+                <input type="text" id="job" name="job" class="form-control" style="popins" required>
             </div>
             <div class="form-group">
-                <label for="image" style="font-family: Georgia, 'Times New Roman', Times, serif;">Image (Optional):</label>
+                <label for="image" style="popins">Image (Optional):</label>
                 <input type="file" id="image" name="image" style="font-family: Georgia, 'Times New Roman', Times, serif;" class="form-control">
             </div>
             <button type="submit" class="btn btn-success float-right" style="font-family: Georgia, 'Times New Roman', Times, serif; margin: auto; width: 50%;">Save</button>
@@ -75,19 +75,19 @@
             @method('PUT')
             <input type="hidden" id="editId" name="id">
             <div class="form-group">
-                <label for="editName" style="font-family: Georgia, 'Times New Roman', Times, serif;">Name:</label>
-                <input type="text" id="editName" name="name" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" required>
+                <label for="editName" style="popins">Name:</label>
+                <input type="text" id="editName" name="name" class="form-control" style="popins" required>
             </div>
             <div class="form-group">
-                <label for="editTestimonial" style="font-family: Georgia, 'Times New Roman', Times, serif;">Testimonial:</label>
-                <textarea id="editTestimonial" name="testimonial" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" required></textarea>
+                <label for="editTestimonial" style="popins">Testimonial:</label>
+                <textarea id="editTestimonial" name="testimonial" class="form-control" style="popins" required></textarea>
             </div>
             <div class="form-group">
-                <label for="editJob" style="font-family: Georgia, 'Times New Roman', Times, serif;">Job:</label>
-                <input type="text" id="editJob" name="job" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;" required>
+                <label for="editJob" style="popins">Job:</label>
+                <input type="text" id="editJob" name="job" class="form-control" style="popins" required>
             </div>
             <div class="form-group">
-                <label for="editImage" style="font-family: Georgia, 'Times New Roman', Times, serif;">Image (Optional):</label>
+                <label for="editImage" style="popins">Image (Optional):</label>
                 <input type="file" id="editImage" name="image" class="form-control" style="font-family: Georgia, 'Times New Roman', Times, serif;">
             </div>
             <button type="submit" class="btn btn-success float-right" style="font-family: Georgia, 'Times New Roman', Times, serif;">Save</button>
@@ -99,7 +99,7 @@
 <div id="deletePopup" class="modal" style="padding: 30px; margin: auto; width: 50%; border: 3px; padding: 10px;">
     <div class="modal-content" style="width: 500px; padding: 35px;">
         <span class="close" onclick="closeDeletePopup()">&times;</span>
-        <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;">Are you sure?</h2>
+        <h2 style="popins">Are you sure?</h2>
         <form id="deleteForm" method="POST">
             @csrf
             @method('DELETE')
@@ -120,13 +120,13 @@
             <th>Actions</th>
         </tr>
     </thead>
-    <tbody style="font-family: Georgia, 'Times New Roman', Times, serif;">
+    <tbody style="popins">
         @foreach ($testimonials as $testimonial)
-        <tr style="font-family: Georgia, 'Times New Roman', Times, serif;">
-            <td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $testimonial->name }}</td>
-            <td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $testimonial->testimonial }}</td>
-            <td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $testimonial->job }}</td>
-            <td style="font-family: Georgia, 'Times New Roman', Times, serif;">
+        <tr style="popins">
+            <td style="popins">{{ $testimonial->name }}</td>
+            <td style="popins">{{ $testimonial->testimonial }}</td>
+            <td style="popins">{{ $testimonial->job }}</td>
+            <td style="popins">
                 @if ($testimonial->image)
                 <img src="{{ asset('storage/' . $testimonial->image) }}" alt="{{ $testimonial->name }}" width="50">
                 @else

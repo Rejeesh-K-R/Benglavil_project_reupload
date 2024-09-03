@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="{{asset('assets/css/ready.css') }}">
 	<link rel="stylesheet" href="{{asset('assets/css/demo.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
 	<link rel="icon" type="image" href="{{asset('assets/img/img.jpeg.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -16,7 +17,7 @@
 
 	<style>
         .row {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: popins;
         }
 
         .card-title {
@@ -108,7 +109,7 @@
 
 
 </head>
-<body style="font-family: Georgia, 'Times New Roman', Times, serif;">
+<body style="font-family: popins;">
 	@extends('layouts.app')
 	@section('content')
 	<div class="main-panel">
@@ -131,8 +132,8 @@
     </div>
 <!--Star's Here-->
 
-<div class="container" style="font-family: Georgia, 'Times New Roman', Times, serif; padding:18px; height: 385px;">
-    <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;">Add Images to {{ $gallery->title }}</h2>
+<div class="container" style="font-family: popins; padding:18px; height: 385px;">
+    <h2 style="font-family: popins;">Add Images to {{ $gallery->title }}</h2>
     <form action="{{ route('admin.gallery.storeImages', $gallery->id) }}" method="POST" style="padding: 20px" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
@@ -141,7 +142,7 @@
         </div>
         <div style="padding: 15px;">
                 <button type="submit" class="btn btn-success">Upload Images</button>
-                <a href="{{ route('admin.gallery.showAdmin', $gallery->id) }}" class="btn btn-secondary" style="font-family: Georgia, 'Times New Roman', Times, serif;">Back</a>
+                <a href="{{ route('admin.gallery.showAdmin', $gallery->id) }}" class="btn btn-secondary" style="font-family: popins;">Back</a>
         </div>
     </form>
 </div>

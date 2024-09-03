@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/newbutton.css">
     <link rel="icon" type="image" href="assets/img/img.jpeg.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -66,9 +67,9 @@
                     <div class="icon d-flex justify-content-center align-items-center mb-5">
                       <!-- <span class="flaticon-choices"></span>-->
                     </div>
-                    <div class="media-body" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                    <div class="media-body">
                       <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;"><b>{{ $service->service_name }}</b></h3>
-                      <p>{{ $service->description }}</p>
+                      <p class="popins">{{ $service->description }}</p>
                         <a href="contact" class="btn-green">Contact Us</a>
                     </div>
                     
@@ -92,11 +93,11 @@
                     <img style="height: 300px; width: 550px; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.4) 5px 5px, rgba(0, 0, 0, 0.3) 10px 10px, rgba(0, 0, 0, 0.2) 15px 15px, rgba(0, 0, 0, 0.1) 20px 20px, rgba(0, 0, 0, 0.05) 25px 25px;" src="{{ Storage::url($service->image) }}" alt="{{ $service->service_name }}">
                   </div>
                 </div>  
-                <div class="col-md-6 ftco-animate" style="font-family: Georgia, 'Times New Roman', Times, serif; padding: 18px;">
+                <div class="col-md-6 ftco-animate" style="padding: 18px;">
                   <div class="icon d-flex justify-content-center align-items-center mb-5"></div>
                   <div class="media-body">
                     <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;"><b>{{ $service->service_name }}</b></h3>
-                    <p>{{ $service->description }}</p>
+                    <p class="popins">{{ $service->description }}</p>
                     <a href="contact" class="btn-green">Contact Us</a>
                   </div>
                 </div>
@@ -106,6 +107,175 @@
 
 
 
+
+
+
+<!--From Here-->
+          <!-- <div class="col-md-6 ftco-animate"> -->
+            <!-- <div class="media d-block text-center block-6 services">
+              <div class="icon d-flex justify-content-center align-items-center mb-5">
+              	<!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;"><b>Custom Landscape Design</b></h3>
+                <p>Transform your outdoor space with our bespoke landscape design services. We create 
+                  beautiful, functional, and sustainable designs tailored to your preferences.</p>
+                  <a href="#" class="btn-green">Contact Us</a> -->
+              <!-- </div>
+              
+          </div>   
+            <div class="col-md-6 ftco-animate"> -->
+              <!--<div class="media d-block text-center block-6 services">-->
+                <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+                  <!-- <span class="flaticon-choices"></span>-->
+                <!-- </div>
+                <div class="media-body">
+                  <img style="height: 300px; width: 550px; border-radius: 20px;" src="images/img-exp-8.png" alt="">
+                </div>
+                
+            </div>    
+
+            <div class="col-md-6 ftco-animate">
+              <div class="icon d-flex justify-content-center align-items-center mb-5"></div>
+              <div class="media-body">
+                <img style="height: 300px; width: 550px; border-radius: 20px;" src="images/img-exp-14-lawn-manage.png" alt="">
+              </div>
+            </div>  
+            <div class="col-md-6 ftco-animate" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+              <div class="icon d-flex justify-content-center align-items-center mb-5"></div>
+              <div class="media-body">
+                <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;"><b>Lawn Care and Maintenance</b></h3>
+                <p>Keep your lawn lush and green year-round with our comprehensive lawn care and maintenance services. We handle everything from mowing and edging to fertilization.</p>
+                <a href="#" class="btn-green">Contact Us</a>
+              </div>
+            </div>
+                  
+           
+          <div class="col-md-6 ftco-animate"> -->
+            <!--<div class="media d-block text-center block-6 services">-->
+              <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+              	<!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;"><b>Garden Installation and Maintenance</b></h3>
+                <p>Enhance your property with vibrant gardens. Our expert team selects, plants, and maintains 
+                  a variety of flowers, shrubs, and trees to ensure a thriving garden.</p>
+                  <a href="#" class="btn-green">Contact Us</a>
+              </div>
+              
+          </div>
+          <div class="col-md-6 ftco-animate"> -->
+            <!--<div class="media d-block text-center block-6 services">-->
+              <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+                <!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body">
+                <img style="height: 300px; width: 550px; border-radius: 20px;" src="images\img-exp-15.png" alt="">
+              </div>
+          </div>
+          
+          <div class="col-md-6 ftco-animate"> -->
+            <!--<div class="media d-block text-center block-6 services">-->
+              <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+                <!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body">
+                <img style="height: 300px; width: 550px; border-radius: 20px;" src="images\img-exp-16.png" alt="">
+              </div>
+          </div>
+          <div class="col-md-6 ftco-animate" style="font-family: Georgia, 'Times New Roman', Times, serif;"> -->
+            <!--<div class="media d-block text-center block-6 services">-->
+              <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+              	<!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body">
+                <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;"><b>Hardscaping Solutions</b></h3>
+                <p>Add durable and stylish features to your landscape with our hardscaping solutions. We 
+                  design and install patios, walkways, retaining walls, and more using high-quality materials.
+                </p>
+                <a href="#" class="btn-green">Contact Us</a>
+              </div>
+              
+          </div>
+          
+
+
+          <div class="col-md-6 ftco-animate"> -->
+            <!--<div class="media d-block text-center block-6 services">-->
+              <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+              	<!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;"><b>Irrigation System Installation</b></h3>
+                <p>Ensure your landscape is properly hydrated with our efficient irrigation systems. We design,
+                   install, and maintain systems that conserve water while keeping your plants healthy.</p>
+                <a href="#" class="btn-green">Contact Us</a>
+                  
+              </div> 
+              
+          </div>
+          <div class="col-md-6 ftco-animate"> -->
+            <!--<div class="media d-block text-center block-6 services">-->
+              <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+                <!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body">
+                <img style="height: 300px; width: 550px; border-radius: 20px;" src="images\img-exp-17.png" alt="">
+              </div>
+          </div>
+
+          <div class="col-md-6 ftco-animate"> -->
+            <!--<div class="media d-block text-center block-6 services">-->
+              <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+                <!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body">
+                <img style="height: 300px; width: 550px; border-radius: 20px;" src="images\img-exp-18.png" alt="">
+              </div>
+          </div>
+          <div class="col-md-6 ftco-animate"> -->
+            <!--<div class="media d-block text-center block-6 services">-->
+              <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+              	<!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;"><b>Seasonal Cleanup Services</b></h3>
+                <p>Prepare your yard for every season with our thorough spring and fall cleanup services. We 
+                  remove debris, prune plants, and ensure your landscape is ready for the upcoming season.
+                </p>
+                <a href="#" class="btn-green">Contact Us</a>
+              </div>
+              
+          </div>
+
+
+          <div class="col-md-6 ftco-animate"> -->
+            <!--<div class="media d-block text-center block-6 services">-->
+              <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+              	<!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                <h3 class="heading" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;"><b>Outdoor Lighting Installation</b></h3>
+                <p>Illuminate your landscape with our custom outdoor lighting solutions. We design and install 
+                  lighting systems that enhance safety and highlight the beauty of your property.</p>
+                <a href="#" class="btn-green">Contact Us</a>
+                  
+              </div>
+              
+          </div>
+          <div class="col-md-6 ftco-animate"> -->
+            <!--<div class="media d-block text-center block-6 services">-->
+              <!-- <div class="icon d-flex justify-content-center align-items-center mb-5"> -->
+                <!-- <span class="flaticon-choices"></span>-->
+              <!-- </div>
+              <div class="media-body">
+                <img style="height: 300px; width: 525px; border-radius: 20px;" src="images\img-exp-20.png" alt="">
+              </div>
+          </div>
+          
+           
+        </div> -->
+<!--To Here-->
     	</div>
     </section>
 

@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="{{asset('assets/css/ready.css') }}">
 	<link rel="stylesheet" href="{{asset('assets/css/demo.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
 	<link rel="icon" type="image" href="{{asset('assets/img/img.jpeg.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -16,7 +17,7 @@
 
 	<style>
         .row {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: popins;
         }
 
         .card-title {
@@ -108,7 +109,7 @@
 
 
 </head>
-<body style="font-family: Georgia, 'Times New Roman', Times, serif;">
+<body style="font-family: popins;">
 	@extends('layouts.app')
 	@section('content')
 	<div class="main-panel">
@@ -132,10 +133,10 @@
 <!--Star's Here-->
 
 <div class="container">
-    <h1 style="padding: 10px; font-family: Georgia, 'Times New Roman', Times, serif;">Galleries</h1>
+    <h1 style="padding: 10px; font-family: popins">Galleries</h1>
 
     <!-- Delete Gallery Button -->
-    <button class="btn btn-danger" style=" font-family: Georgia, 'Times New Roman', Times, serif; position: relative; left: 814px; top:-40px;" data-toggle="modal" data-target="#deleteGalleryModal{{ $gallery->id }}">Delete Gallery</button>
+    <button class="btn btn-danger" style=" font-family: popins position: relative; left: 814px; top:-40px;" data-toggle="modal" data-target="#deleteGalleryModal{{ $gallery->id }}">Delete Gallery</button>
 
     <!-- Edit Title/Description Button -->
     <!-- <button class="btn btn-green" data-toggle="modal" data-target="#editGalleryModal{{ $gallery->id }}">Edit Title/Description</button> -->
@@ -151,9 +152,9 @@
         </thead>
         <tbody>
             <tr>
-                <td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $gallery->title }}</td>
-                <td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $gallery->description }}</td>
-                <td style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                <td style="font-family: popins">{{ $gallery->title }}</td>
+                <td style="font-family: popins">{{ $gallery->description }}</td>
+                <td style="font-family: popins">
                     <!-- Edit Title/Description Modal Triggered by this Button -->
                     <button class="btn btn-green" data-toggle="modal" data-target="#editGalleryModal{{ $gallery->id }}">Edit Title/Description</button>
                 </td>
@@ -168,7 +169,7 @@
                 <th>Image</th>
                 <th>Actions</th>
                 <th><a href="{{ route('admin.gallery.addImages', $gallery->id) }}">
-                        <button class="btn btn-primary" style="font-family: Georgia, 'Times New Roman', Times, serif;">Add New Images</button>
+                        <button class="btn btn-primary" style="font-family: popins">Add New Images</button>
                     </a>
                 </th>
             </tr>
@@ -181,9 +182,9 @@
                     </td>
                     <td>
                         <!-- Edit Image Button -->
-                        <button class="btn btn-green" style="font-family: Georgia, 'Times New Roman', Times, serif;" data-toggle="modal" data-target="#editImageModal{{ $image->id }}">Edit Image</button>
+                        <button class="btn btn-green" style="font-family: popins" data-toggle="modal" data-target="#editImageModal{{ $image->id }}">Edit Image</button>
                         <!-- Delete Image Button -->
-                        <button class="btn btn-danger" style="font-family: Georgia, 'Times New Roman', Times, serif;" data-toggle="modal" data-target="#deleteImageModal{{ $image->id }}">Delete Image</button>
+                        <button class="btn btn-danger" style="font-family: popins" data-toggle="modal" data-target="#deleteImageModal{{ $image->id }}">Delete Image</button>
                     </td>
                 </tr>
 
@@ -192,7 +193,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content" style="width: 300px;">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="editImageModalLabel{{ $image->id }}" style="font-family: Georgia, 'Times New Roman', Times, serif;">Edit Image</h5>
+                                <h5 class="modal-title" id="editImageModalLabel{{ $image->id }}" style="font-family: popins">Edit Image</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -202,11 +203,11 @@
     @method('PUT')
     <div class="modal-body">
         <div class="form-group">
-            <label for="image" style="font-family: Georgia, 'Times New Roman', Times, serif;">Choose a new image to upload:</label>
-            <input type="file" class="form-control" style="height: 50px;" name="image" style="font-family: Georgia, 'Times New Roman', Times, serif;" required>
+            <label for="image" style="font-family: popins">Choose a new image to upload:</label>
+            <input type="file" class="form-control" style="height: 50px;" name="image" style="font-family: popins" required>
         </div>
     </div>
-    <div class="modal-footer" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+    <div class="modal-footer" style="font-family: popins">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <button type="submit" class="btn btn-green">Save</button>
     </div>
@@ -219,17 +220,17 @@
                 <!-- Delete Image Modal -->
                 <div class="modal fade" id="deleteImageModal{{ $image->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteImageModalLabel{{ $image->id }}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                        <div class="modal-content" style="width: 300px;">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="deleteImageModalLabel{{ $image->id }}" style="font-family: Georgia, 'Times New Roman', Times, serif;">Confirm Delete Image</h5>
+                                <h5 class="modal-title" id="deleteImageModalLabel{{ $image->id }}" style="font-family: popins">Confirm Delete Image</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Are you sure you want to delete this image?</p>
+                                <p style="font-family: popins">Are you sure you want to delete this image?</p>
                             </div>
-                            <div class="modal-footer" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                            <div class="modal-footer" style="font-family: popins">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 <form action="{{ route('admin.gallery.delete_image', $image->id) }}" method="POST" style="display:inline;">
                                     @csrf
@@ -249,15 +250,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="width: 400px;">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteGalleryModalLabel{{ $gallery->id }}" style="font-family: Georgia, 'Times New Roman', Times, serif;">Confirm Delete Gallery</h5>
+                    <h5 class="modal-title" id="deleteGalleryModalLabel{{ $gallery->id }}" style="font-family: popins">Confirm Delete Gallery</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Are you sure you want to delete this gallery?</p>
+                    <p style="font-family: popins">Are you sure you want to delete this gallery?</p>
                 </div>
-                <div class="modal-footer" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                <div class="modal-footer" style="font-family: popins">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <form action="{{ route('admin.gallery.destroy', $gallery->id) }}" method="POST" style="display:inline;">
                         @csrf
@@ -270,11 +271,11 @@
     </div>
 
     <!-- Edit Title/Description Modal -->
-    <div class="modal fade" id="editGalleryModal{{ $gallery->id }}" style="font-family: Georgia, 'Times New Roman', Times, serif;" tabindex="-1" role="dialog" aria-labelledby="editGalleryModalLabel{{ $gallery->id }}" aria-hidden="true">
+    <div class="modal fade" id="editGalleryModal{{ $gallery->id }}" style="font-family: popins" tabindex="-1" role="dialog" aria-labelledby="editGalleryModalLabel{{ $gallery->id }}" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="width:550px;">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editGalleryModalLabel{{ $gallery->id }}" style="font-family: Georgia, 'Times New Roman', Times, serif;">Edit Title and Description</h5>
+                    <h5 class="modal-title" id="editGalleryModalLabel{{ $gallery->id }}" style="font-family: popins">Edit Title and Description</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -283,16 +284,16 @@
                     @csrf
                     @method('PUT')
                     <div class="modal-body">
-                        <div class="form-group" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                        <div class="form-group" style="font-family: popins">
                             <label for="title">Title:</label>
                             <input type="text" class="form-control" name="title" value="{{ $gallery->title }}" required>
                         </div>
-                        <div class="form-group" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                        <div class="form-group" style="font-family: popins">
                             <label for="description">Description:</label>
                             <textarea class="form-control" name="description" rows="4" required>{{ $gallery->description }}</textarea>
                         </div>
                     </div>
-                    <div class="modal-footer" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                    <div class="modal-footer" style="font-family: popins">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-green">Save changes</button>
                     </div>

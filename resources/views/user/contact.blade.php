@@ -27,11 +27,12 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
     <link rel="icon" type="image" href="assets/img/img.jpeg.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   </head>
-  <body style="font-family: Georgia, 'Times New Roman', Times, serif;">
+  <body>
   @if(Auth::check() && Auth::user()->isAdmin())
         @include('layouts.adminheader')
     @else
@@ -49,7 +50,7 @@
             <div class="col-md-7 col-sm-12 text-center ftco-animate">
             	<h1 class="mb-3 mt-5 bread" style="font-family: Georgia, 'Times New Roman', Times, serif;">Contact Us</h1>
               <!--html here (index.html)-->
-	            <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span> <span>Contact</span></p>
+	            <p class="breadcrumbs" style="font-family: Georgia, 'Times New Roman', Times, serif;"><span class="mr-2"><a href="/">Home</a></span> <span>Contact</span></p>
             </div>
 
           </div>
@@ -74,7 +75,7 @@
             <h2 class="h4" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000000;">Contact Information</h2>
           </div>
           <div class="col-md-12 mb-3">
-            <p style="color: #000000;"><span style="color: #000000;">Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+            <p class="popins" style="color: #000000;"><span style="color: #000000;">Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
           </div>
           <div class="col-md-12 mb-3">
             <p><span style="color: #000000;">Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
@@ -118,7 +119,61 @@
 
 
 
-   
+    <!-- <section class="ftco-section contact-section" style="background-image: url(images/bg_4.jpg);">
+      <div class="container mt-5">
+        <div class="row block-9">
+					<div class="col-md-4 contact-info ftco-animate">
+						<div class="row">
+							<div class="col-md-12 mb-4">
+	              <h2 class="h4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Contact Information</h2>
+	            </div>
+	            <div class="col-md-12 mb-3">
+	              <p style="color: #fff;"><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+	            </div>
+	            <div class="col-md-12 mb-3">
+	              <p><span >Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+	            </div>
+	            <div class="col-md-12 mb-3">
+	              <p><span >Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+	            </div>
+	            <div class="col-md-12 mb-3">
+	              <p><span ">Website:</span> <a href="#">yoursite.com</a></p>
+	            </div>
+						</div>
+					</div>
+					<div class="col-md-1"></div>
+          <div class="col-md-6 ftco-animate">
+            <form method="post" action="{{route('contact.store')}}" class="contact-form">
+              @csrf
+            	<div class="row">
+            		<div class="col-md-6">
+	                <div class="form-group" >
+	                  <input type="text" name="name" class="form-control" placeholder="Your Name">
+	                </div>
+                </div>
+                <div class="col-md-6">
+	                <div class="form-group">
+	                  <input type="text" name="mobile" class="form-control" placeholder="Your mobile">
+	                </div>
+	                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" name="email" class="form-control" placeholder="email">
+              </div>
+              <div class="form-group">
+                <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <button type="submit" style="padding:20px; width:35%;" class="btn btn-primary">Send Message</button>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+
+
+
 
 
     <section>

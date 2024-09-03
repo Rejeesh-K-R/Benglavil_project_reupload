@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="{{asset('assets/css/ready.css') }}">
 	<link rel="stylesheet" href="{{asset('assets/css/demo.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 	<link rel="icon" type="image" href="{{asset('assets/img/img.jpeg.png') }}">
@@ -98,7 +99,7 @@
 
 
 </head>
-<body style="font-family: Georgia, 'Times New Roman', Times, serif;">
+<body>
 @extends('layouts.app')
 @section('content')
 			
@@ -112,9 +113,9 @@
 								<div class="card">
 									<div class="card-header">
 										<div class="row">
-                                            <div class="card-title" style="padding:30px;">{{ $discoverService->title ?? 'Discover Our Services' }}</div>
+                                            <div class="card-title" style="padding:30px; font-family: popins;">{{ $discoverService->title ?? 'Discover Our Services' }}</div>
                                             <span class="button" style="position: relative; left: 655px;;">
-                                                <div class="media-body" style="font-family: Georgia, 'Times New Roman', Times, serif; height: 10px;">
+                                                <div class="media-body" style="font-family: popins; height: 10px;">
                                                     
 												<a href="#" class="btn-green" style="font-family: Georgia, 'Times New Roman', Times, serif;" onclick="showEditDiscoverPopup()"><i class="fa-solid fa-pen"></i>Edit</a>
 
@@ -145,7 +146,7 @@
 
 									</div>
 									<div class="card-body">
-										<table class="table table-hover" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+										<table class="table table-hover">
 											<thead style="font-family: Georgia, 'Times New Roman', Times, serif;">
 												<tr>
 													<th scope="col"><h1 style="font-family: Georgia, 'Times New Roman', Times, serif;"><small>{{ $discoverService ? $discoverService->title : 'Default Title Here' }}
@@ -155,7 +156,7 @@
 											</thead>
 											<tbody>
 												<tr>
-													<td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $discoverService ? $discoverService->description : 'Default description here if not set.' }}</td>
+													<td style="font-family: popins;">{{ $discoverService ? $discoverService->description : 'Default description here if not set.' }}</td>
 												</tr>
 												
 											</tbody>
@@ -202,7 +203,7 @@
         </div>
     </div>
                                             </div>
-                                            <div class="card-body" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                                            <div class="card-body">
                                                 <table class="table table-hover">
                                                     <thead>
                                                         <tr>
@@ -216,8 +217,8 @@
 													@foreach($services as $service)
 															<tr>
 																<td>{{$loop->iteration}}</td>
-																<td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $service->service_name }}</td>
-																<td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $service->description }}</td>
+																<td style="font-family: popins;">{{ $service->service_name }}</td>
+																<td style="font-family: popins;">{{ $service->description }}</td>
 																@if($service->image)
                         											<td><img style="width: 100px;" src="{{ Storage::url($service->image) }}" alt="{{ $service->service_name }}"></td>
                     											@endif
@@ -244,12 +245,12 @@
     	@csrf
     	@method('PUT')
             <div class="form-group">
-                <label for="service_name" style="font-family: Georgia, 'Times New Roman', Times, serif;">Service Name:</label>
-                <input type="text" id="edit_service_name" style="font-family: Georgia, 'Times New Roman', Times, serif;" name="service_name" class="form-control" required>
+                <label for="service_name" style="font-family: popins;">Service Name:</label>
+                <input type="text" id="edit_service_name" style="font-family: popins;" name="service_name" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="description" style="font-family: Georgia, 'Times New Roman', Times, serif;">Description:</label>
-                <textarea id="edit_description" style="font-family: Georgia, 'Times New Roman', Times, serif;" name="description" class="form-control" required></textarea>
+                <label for="description" style="font-family: popins;">Description:</label>
+                <textarea id="edit_description" style="font-family: popins;" name="description" class="form-control" required></textarea>
             </div>
             <div class="form-group">
                 <label for="image" style="font-family: Georgia, 'Times New Roman', Times, serif;">Image (Optional):</label>
@@ -266,13 +267,13 @@
 <div id="deleteModal" class="modal" style="display: none;">
     <div class="modal-content">
         <span class="close" onclick="closeDeleteModal()">&times;</span>
-        <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Are you sure you want to delete this service?</h3>
+        <h3 style="font-family: popins;">Are you sure you want to delete this service?</h3>
         <form id="deleteForm" method="POST">
             @csrf
             @method('DELETE')
 			<div style="padding: 15px;">
-				<button type="submit" class="btn btn-danger" style="font-family: Georgia, 'Times New Roman', Times, serif;">Yes</button>
-				<button type="button" class="btn btn-secondary" style="font-family: Georgia, 'Times New Roman', Times, serif;" onclick="closeDeleteModal()">No</button>
+				<button type="submit" class="btn btn-danger" style="font-family: popins;">Yes</button>
+				<button type="button" class="btn btn-secondary" style="font-family: popins;" onclick="closeDeleteModal()">No</button>
 			</div>
         </form>
     </div>

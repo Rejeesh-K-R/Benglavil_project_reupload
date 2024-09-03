@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="{{asset('assets/css/ready.css') }}">
 	<link rel="stylesheet" href="{{asset('assets/css/demo.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	
@@ -30,14 +31,14 @@
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-header">
-										<div class="card-title" style="font-family: Georgia, 'Times New Roman', Times, serif;">Contact Details<span class="button" style="position: fixed; right: 45px;">
+										<div class="card-title" style="font-family: popins;">Contact Details<span class="button" style="position: fixed; right: 45px;">
                                             
                                             <span></div>
 									</div>
 									<div class="card-body">
 										<table class="table table-hover">
 											<thead>
-												<tr style="font-family: Georgia, 'Times New Roman', Times, serif;">
+												<tr style="font-family: popins;">
 													<th scope="col">#</th>
 													<th scope="col">Name</th>
 													<th scope="col">mobile</th>
@@ -49,13 +50,13 @@
 												@foreach ($contacts as $contact)
 													<tr>
 														<td scope="row">{{$loop->iteration}}</td>
-														<td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{$contact->name}}</td>
-														<td style="">{{$contact->mobile}}</td>
-														<td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{$contact->email}}</td>
-														<td style="font-family: Georgia, 'Times New Roman', Times, serif;">{{$contact->message}}</td>
+														<td class="popins">{{$contact->name}}</td>
+														<td  class="popins">{{$contact->mobile}}</td>
+														<td class="popins">{{$contact->email}}</td>
+														<td class="popins">{{$contact->message}}</td>
 														<!--<td><div class="media-body">
 																
-														<a href="#" class="btn-green edit-btn" onclick="showEditPopup({{ $contact->id }})" style="font-family: Georgia, 'Times New Roman', Times, serif;">Edit</a>
+														<a href="#" class="btn-green edit-btn" onclick="showEditPopup({{ $contact->id }})" style="font-family: popins;">Edit</a>
 
 														</div></td>-->
 
@@ -93,10 +94,10 @@
 
 <!-- Delete Confirmation Popup -->
 <div id="deletePopup" style="display: none; position: fixed; top: 30%; left: 50%; transform: translate(-50%, -20%); background: white; border-radius: 10px; padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); z-index: 1000; width:445px;">
-    <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Are you sure you want to delete this record?</h3>
+    <h3 style="font-family: popins;">Are you sure you want to delete this record?</h3>
 	<div style="padding: 20px;" ><!--class="float-right"-->
-		<button id="confirmDelete" class="btn btn-danger" style="font-family: Georgia, 'Times New Roman', Times, serif;">Yes</button>
-		<button type="button" class="btn btn-secondary" style="font-family: Georgia, 'Times New Roman', Times, serif;" onclick="closeDeletePopup()">No</button>
+		<button id="confirmDelete" class="btn btn-danger" style="font-family: popins;">Yes</button>
+		<button type="button" class="btn btn-secondary" style="font-family: popins;" onclick="closeDeletePopup()">No</button>
 	</div>
 </div>
 
@@ -225,5 +226,53 @@ function closeDeletePopup() {
 </script>
 
 
+<!--
+<script>
+	// Show the Edit Popup
+	function showEditPopup(contactId) {
+		// Populate form with current data (can use AJAX for dynamic data)
+		document.getElementById('editPopup').style.display = 'block';
+	}
 
+	// Close the Edit Popup
+	function closeEditPopup() {
+		document.getElementById('editPopup').style.display = 'none';
+	}
+
+	// Show the Delete Confirmation Popup
+	function showDeletePopup(contactId) {
+		// Set the action on the confirm button
+		document.getElementById('confirmDelete').onclick = function() {
+			deleteContact(contactId);
+		};
+		document.getElementById('deletePopup').style.display = 'block';
+	}
+
+	// Close the Delete Popup
+	function closeDeletePopup() {
+		document.getElementById('deletePopup').style.display = 'none';
+	}
+
+	// Function to delete the contact
+	function deleteContact(contactId) {
+		// Make a request to the server to delete the contact
+		fetch(`/admin/contact/${contactId}`, {
+			method: 'DELETE',
+			headers: {
+				'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+			}
+		})
+		.then(response => response.json())
+		.then(data => {
+			if(data.success) {
+				// Handle successful deletion (e.g., remove the row from the table)
+				window.location.reload();
+			}
+		})
+		.catch(error => console.error('Error:', error));
+	}
+
+
+</script>
+-->
 </html>

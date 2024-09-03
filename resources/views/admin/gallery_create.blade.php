@@ -9,13 +9,14 @@
 	<link rel="stylesheet" href="{{asset('assets/css/ready.css') }}">
 	<link rel="stylesheet" href="{{asset('assets/css/demo.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
 	<link rel="icon" type="image" href="assets/img/img.jpeg.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 	<style>
         .row {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: popins;
         }
 
         .card-title {
@@ -96,7 +97,7 @@
 
 
 </head>
-<body style="font-family: Georgia, 'Times New Roman', Times, serif;">
+<body style="font-family: popins;">
 	@extends('layouts.app')
 	@section('content')
 	<div class="main-panel">
@@ -121,7 +122,7 @@
     <!-- Starts here -->
     
 <div class="container">
-    <h1>Create New Gallery</h1>
+    <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">Create New Gallery</h1>
 
     <form action="{{ route('admin.gallery.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -138,12 +139,14 @@
         <div class="form-group">
             <label for="cover_image">Cover Image</label>
             <input type="file" name="cover_image" id="cover_image" class="form-control" required>
+            <small class="text-muted">Aspect Ratio: 1:1 (Square)</small>
         </div>
 
         @for($i = 0; $i < 10; $i++)
         <div class="form-group">
             <label for="images[{{ $i }}]">Image {{ $i + 1 }} (optional)</label>
             <input type="file" name="images[{{ $i }}]" id="images[{{ $i }}]" class="form-control">
+            <small class="text-muted">Aspect Ratio: 1:1 (Square)</small>
         </div>
         @endfor
 

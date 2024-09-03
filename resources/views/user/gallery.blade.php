@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
     <link rel="icon" type="image" href="assets/img/img.jpeg.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -30,7 +31,7 @@
       }
     </style>
   </head>
-  <body style="font-family: Georgia, 'Times New Roman', Times, serif;">
+  <body>
   @if(Auth::check() && Auth::user()->isAdmin())
         @include('layouts.adminheader')
     @else
@@ -65,8 +66,8 @@
             <div class="card mb-4" style="border-radius: 15px; box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;">
                 <img src="{{ asset('storage/'.$gallery->cover_image) }}" style="border-radius: 15px;" class="card-img-top" alt="{{ $gallery->title }}">
                 <div class="card-body">
-                    <h5 class="card-title" style="color: #000;">{{ $gallery->title }}</h5>
-                    <p class="card-text" style="color: #000;">{{ $gallery->description }}</p>
+                    <h5 class="card-title" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000;">{{ $gallery->title }}</h5>
+                    <p class="card-text"  class="popins" style="color: #000;">{{ $gallery->description }}</p>
                     <a href="{{ route('user.gallery.show', $gallery->id) }}" class="btn btn-primary" style="border-radius: 11px;">View Gallery</a>
                 </div>
             </div>

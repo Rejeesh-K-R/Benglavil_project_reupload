@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
 	<link rel="icon" type="image" href="assets/img/img.jpeg.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -67,7 +68,7 @@
     @endif</span>
 	          <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $about->title }}</h2>
 	        </div>
-	        <div style="font-family: Georgia, 'Times New Roman', Times, serif;">
+	        <div class="popins">
 	  				<p style="color: #fff;">{{ $about->description }}
 					</p>
 	  			</div>
@@ -80,9 +81,9 @@
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading">Testimony</span>
+                <span class="subheading">Testimoniels</span>
                 <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Customers Say</h2>
-                <p style="font-family: Georgia, 'Times New Roman', Times, serif; color: white;">
+                <p class="popins" style="color: white;">
                     Hear from our satisfied customers about their experiences with our exceptional landscaping services. 
                     Their words reflect our commitment to quality and customer satisfaction.
                 </p>
@@ -97,7 +98,7 @@
                     <div class="row d-flex no-gutters">
                         @foreach($testimonyChunk as $testimony)
                         <div class="col-lg align-self-sm-end ftco-animate">
-                            <div class="testimony {{ $loop->iteration % 2 == 0 ? 'overlay' : '' }}" style="font-family: Georgia, 'Times New Roman', Times, serif; height: 300px;">
+                            <div class="testimony {{ $loop->iteration % 2 == 0 ? 'overlay' : '' }}" class="popins" style="height: 300px;">
                                 <blockquote>
                                     <p>&ldquo;{{ $testimony->testimonial }}&rdquo;</p>
                                 </blockquote>
@@ -130,6 +131,89 @@
 
 
 
+<!--
+    <section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/img-exp-8.png);"  data-stellar-background-ratio="0.5">
+    	<div class="overlay"></div>
+	    <div class="container">
+	      <div class="row justify-content-center mb-5">
+	        <div class="col-md-7 heading-section text-center ftco-animate">
+	        	<span class="subheading">Testimony</span>
+	          <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Customers Says</h2>
+	          <p style="font-family: Georgia, 'Times New Roman', Times, serif; color: #fff;">Hear from our satisfied customers about their experiences with our exceptional landscaping services. Their words reflect our commitment to quality and customer satisfaction.</p>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="container-wrap">
+	      <div class="row d-flex no-gutters" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony">
+	             <blockquote>
+	                <p>&ldquo;My garden has never looked better! The team was professional, punctual, and transformed my outdoor space into a beautiful oasis&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images\person_4.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end">
+	          <div class="testimony overlay">
+	             <blockquote>
+	                <p>&ldquo;Excellent service from start to finish. The lawn maintenance and garden design exceeded my expectations. Highly recommend!&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images/person_2.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony">
+	             <blockquote>
+	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images/person_3.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end">
+	          <div class="testimony overlay">
+	             <blockquote>
+	                <p>&ldquo;The new irrigation system is fantastic. Efficient, effective, and installed with minimal disruption. Great job!&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images/person_2.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony">
+	            <blockquote>
+	              <p>&ldquo;I am thrilled with the seasonal cleanup services. My yard is always ready for each season, thanks to their meticulous work &rdquo;</p>
+	            </blockquote>
+	            <div class="author d-flex mt-4">
+	              <div class="image mr-3 align-self-center">
+	                <img src="images/person_3.jpg" alt="">
+	              </div>
+	              <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+-->
 
 	  <section class="ftco-section">
     	<div class="container">
@@ -138,7 +222,7 @@
     				<div class="heading-section text-md-right ftco-animate">
 	          	<span class="subheading">Discover</span>
 	            <h2 class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #000">Our Services</h2>
-	            <p class="mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">{{ $discoverService->description }}
+	            <p class="mb-4" class="popins">{{ $discoverService->description }}
 					</p>
 	            <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">View More </a></p>
 	          </div>

@@ -9,13 +9,14 @@
 	<link rel="stylesheet" href="{{asset('assets/css/ready.css') }}">
 	<link rel="stylesheet" href="{{asset('assets/css/demo.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{asset('css/newbutton.css') }}">
 	<link rel="icon" type="image" href="assets/img/img.jpeg.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 	<style>
         .row {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: popins;
         }
 
         .card-title {
@@ -96,7 +97,7 @@
 
 
 </head>
-<body style="font-family: Georgia, 'Times New Roman', Times, serif;">
+<body>
 	@extends('layouts.app')
 	@section('content')
 	<div class="main-panel">
