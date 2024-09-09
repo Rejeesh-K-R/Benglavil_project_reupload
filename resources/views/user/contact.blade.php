@@ -81,6 +81,9 @@
             <p><span style="color: #000000;">Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
           </div>
           <div class="col-md-12 mb-3">
+            <p><span style="color:#000;">WhatsApp: </span><a href="https://wa.me/1234455">1234455</a></p>
+          </div>
+          <div class="col-md-12 mb-3">
             <p><span style="color: #000000;">Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
           </div>
           <div class="col-md-12 mb-3">
